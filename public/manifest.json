@@ -1,0 +1,50 @@
+{
+  "name": "CEOP Business",
+  "short_name": "CEOP",
+  "start_url": "https://ceopbusiness.com",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#08F",
+  "orientation": "portrait-primary",
+  "scope": "/",
+
+  "icons": [
+    {
+      "src": "https://drive.google.com/thumbnail?id=1v0RH8ddIee2uCeqAdPVUkQ9HR18-JMUD",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "https://drive.google.com/thumbnail?id=1IL6YT0hM48lgwvYQWk-nnJrvL6-igMwD",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "https://drive.google.com/thumbnail?id=1muHImoSswIxtj_cIcvlCo4YL_x1INRtH",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "https://drive.google.com/thumbnail?id=1HKuV8RzkPlkXGYdrdinLJpJlt4rWnNfl",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://drive.google.com/thumbnail?id=14DeISeO47-vJl9ZA3ngdQL46onCTRaFG",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://drive.google.com/thumbnail?id=1xqvYzsShW5YBv1DOjEcoxR9t9I34ETU4",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "https://drive.google.com/thumbnail?id=1DuA1fnA2T43yuLZ9dZsw_HRI4Ipzeqma",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null,
+  "prefer_related_applications": false
+}
