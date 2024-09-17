@@ -1,9 +1,19 @@
+import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
 
 function App() {
-  return(
-    <h1>hello</h1>
-  )
+  return (
+    <>
+      <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" exact /> 
+      </Routes>
+      </Router>
+    </>
+  );
 }
 
 export default App;
