@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 import Logo from "./ceop.svg";
 
-function Navbar() {
+function NavBar() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -27,22 +27,38 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link
+                  to="/nosotros"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
                   NOSOTROS
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link
+                  to="/servicios"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
                   SERVICIOS
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link
+                  to="/contacto"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
                   CONTACTO
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                <Link
+                  to="/recursos"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
                   RECURSOS
                 </Link>
               </li>
@@ -54,4 +70,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavBar;
