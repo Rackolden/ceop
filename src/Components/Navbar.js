@@ -2,25 +2,36 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import Logo from "./ceop.svg";
+import { Button } from "./Button";
 
 function NavBar() {
   const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
+
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  window.addEventListener("resize", showButton);
+
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <div className="menu-icon-container" onClick={handleClick}>
+          <Link to="/" className="navbar-Logo">
+            CEOP
+          </Link>
+          <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fa-solid fa-x" : "fa-solid fa-bars"}></i>
           </div>
-          <div className="navbar-logo-container">
-            <Link to="/" className="navbar-Logo">
-              <img src={Logo} alt="CEOP Logo" className="logo-image"></img>
-            </Link>
-          </div>
-          <div className={click ? "nav-menu active" : "nav-menu"}>
-            <ul>
+            <ul className={click ? "nav-menu active" : "nav-menu"}>
               <li className="nav-item">
                 <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                   INICIO
@@ -63,7 +74,7 @@ function NavBar() {
                 </Link>
               </li>
             </ul>
-          </div>
+            {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
         </div>
       </nav>
     </>
