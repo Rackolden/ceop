@@ -1,84 +1,67 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 import "./NavBar.css";
-import Logo from "./ceop.svg";
-import { Button } from "./Button";
 
 function NavBar() {
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
-
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
+  const ulRef = useRef();
+  const showNavbar = () => {
+    ulRef.current.classList.toggle("responsive_ul");
   };
 
-  window.addEventListener("resize", showButton);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const showNavbarAlt = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  // Función para cerrar el menú al hacer clic en un enlace
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
 
   return (
-    <>
-      <nav className="navbar">
-        <div className="navbar-container">
-          <Link to="/" className="navbar-Logo">
-            <h1 className="Title">CEOP</h1>&nbsp;
-            <h2 className="Title-secondary">Business</h2>
+    <nav className="navbar">
+      <Link to="/" className="navbar-title">
+        <h1 className="ceop-title">CEOP&nbsp;</h1>
+        <h2 className="business-title">Business&nbsp;</h2>
+        <i className="fa-regular fa-graduation-cap"></i>
+      </Link>
+      <ul ref={ulRef} className="nav-item-container">
+        <li className="nav-item">
+          <Link to="/" className="nav-links">
+            INICIO
           </Link>
-          <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? "fa-solid fa-x" : "fa-solid fa-bars"}></i>
-          </div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                INICIO
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/nosotros"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                NOSOTROS
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/servicios"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                SERVICIOS
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/contacto"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                CONTACTO
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/recursos"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                RECURSOS
-              </Link>
-            </li>
-          </ul>
-          {button && <Button buttonStyle="btn--outline">INGRESAR</Button>}
-        </div>
-      </nav>
-    </>
+        </li>
+        <li className="nav-item">
+          <Link to="https://google.com" className="nav-links">
+            NOSOTROS
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/servicios" className="nav-links">
+            SERVICIOS
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/contacto" className="nav-links">
+            CONTACTO
+          </Link>
+        </li>
+        <li className="nav-item nav-recursos">
+          <Link to="/recursos" className="nav-links">
+            RECURSOS
+          </Link>
+        </li>
+        <button className="nav-btn nav-close-btn X-btn" onClick={showNavbar}>
+          <i className="fa-duotone fa-solid fa-x"></i>
+        </button>
+      </ul>
+      <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+        <i className="fa-regular fa-bars"></i>
+      </button>
+      <ul></ul>
+    </nav>
   );
 }
 
