@@ -4,7 +4,7 @@
   "start_url": "https://ceopbusiness.com",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#08F",
+  "theme_color": "#0088ff",
   "orientation": "portrait-primary",
   "scope": "/",
 

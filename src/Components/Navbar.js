@@ -1,24 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
 import "./NavBar.css";
 
 function NavBar() {
-  const ulRef = useRef();
-  const showNavbar = () => {
-    ulRef.current.classList.toggle("responsive_ul");
-  };
-
   const [menuOpen, setMenuOpen] = useState(false);
-  const showNavbarAlt = () => {
+
+  const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // Función para cerrar el menú al hacer clic en un enlace
   const closeMenu = () => {
     setMenuOpen(false);
   };
+  
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const menu = document.querySelector(".nav-item-container");
+      if (menu && menu.contains(event.target) === false) {
+        closeMenu(); // Cierra el menú si el clic está fuera
+      }
+    };
 
+    document.addEventListener("mousedown", handleClickOutside); // Agrega el eventListener
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside); // Limpia el eventListener al desmontar
+    };
+  }, []); // Ejecuta el efecto solo una vez al montar el componente
 
   return (
     <nav className="navbar">
@@ -27,40 +35,46 @@ function NavBar() {
         <h2 className="business-title">Business&nbsp;</h2>
         <i className="fa-regular fa-graduation-cap"></i>
       </Link>
-      <ul ref={ulRef} className="nav-item-container">
+
+      {/* Clase dinámica basada en el estado del menú */}
+      <ul className={`nav-item-container ${menuOpen ? "responsive_ul" : ""}`}>
         <li className="nav-item">
-          <Link to="/" className="nav-links">
+          <Link to="/" className="nav-links" onClick={closeMenu}>
             INICIO
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="https://google.com" className="nav-links">
+          <Link to="/nosotros" className="nav-links" onClick={closeMenu}>
             NOSOTROS
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/servicios" className="nav-links">
+          <Link to="/servicios" className="nav-links" onClick={closeMenu}>
             SERVICIOS
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/contacto" className="nav-links">
+          <Link to="/contacto" className="nav-links" onClick={closeMenu}>
             CONTACTO
           </Link>
         </li>
-        <li className="nav-item nav-recursos">
-          <Link to="/recursos" className="nav-links">
+        <li className="nav-item">
+          <a
+            href="https://google.com"
+            className="nav-links"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+          >
             RECURSOS
-          </Link>
+          </a>
         </li>
-        <button className="nav-btn nav-close-btn X-btn" onClick={showNavbar}>
-          <i className="fa-duotone fa-solid fa-x"></i>
-        </button>
       </ul>
-      <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-        <i className="fa-regular fa-bars"></i>
+
+      {/* Botón para mostrar/ocultar el menú */}
+      <button className="nav-btn nav-close-btn" onClick={toggleMenu}>
+        <i className={menuOpen ? "fa-solid fa-x" : "fa-solid fa-bars"}></i>
       </button>
-      <ul></ul>
     </nav>
   );
 }
