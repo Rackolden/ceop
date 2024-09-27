@@ -8,8 +8,8 @@ function Body() {
       <div className="info-request">
         <div className="form-text-container">
           <p className="form-text">
-            ¿Buscas acabar tu tesis? En CEOP Business somos los
-            mejores!&nbsp;;-)
+            ¿Buscas acabar con tu vida? En CEOP Business somos los
+            mejores denigrándote!&nbsp;;-)
           </p>
         </div>
         <form className="formulario">

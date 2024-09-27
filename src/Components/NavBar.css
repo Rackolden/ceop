@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  height: 8vh;
   width: 100vw;
   padding: 0rem;
   background-color: var(--mainColor);
@@ -29,20 +29,20 @@
 .ceop-title {
   background-color: transparent;
   font-weight: 400;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 500;
   user-select: none;
 }
 
 .business-title {
   background-color: transparent;
-  font-size: 2.5rem;
+  font-size: 2.1rem;
   user-select: none;
 }
 
 .fa-graduation-cap {
   background-color: transparent;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   overflow-y: hidden;
   user-select: none;
 }
@@ -76,7 +76,7 @@
 .nav-item {
   list-style-type: none;
   background-color: transparent;
-  font-size: 20px;
+  font-size: 17px;
   margin-right: 2vw;
   overflow-y: hidden;
   height: 40px;
