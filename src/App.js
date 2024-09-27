@@ -6,14 +6,14 @@ import Body from "./Components/Body";
 
 function App() {
   return (
-    <>
+    <div>
       <Router>
         <NavBar />
         <Routes>
           <Route path="/" element={<Body />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 

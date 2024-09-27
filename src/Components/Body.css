@@ -1,26 +1,94 @@
-/* Body.css */
-body {
-    font-family: 'Arial', sans-serif;
-    color: #333;
+.info-request {
+    background-image: url("./img-upscaling/landing-rs1.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: #f5f5dc;
-    /* Light beige background */
+
+    align-items: center;
 }
 
-.landing-main-image {
-    width: 100vw;
-    height: auto;
-    position: sticky;
-    margin: 0;
-    padding: 0;
+.info-request::before {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(24, 24, 0, 0.422);
+}
+
+.form-text-container {
+    background-color: transparent;
+    position: absolute;
+    left: 10vw;
+    width: 50vw;
+    max-width: 90vw; /* Establece un ancho máximo */
+    overflow-wrap: break-word; /* Asegúrate de que el texto largo se divida */
+    overflow: visible;
 }
 
 
-/* Hero section */
+.form-text {
+    background-color: transparent;
+    user-select: none;
+    font-size: 4.5vw;
+    white-space: normal;
+    font-weight: 400;
+    color: white;
+    text-shadow: -15px 8px 1px rgba(0, 0, 0, 0.4);
+}
+
+.formulario {
+    position: absolute;
+    background-color: #30d6ffa2;
+    left: 70%;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 5px solid #3ffffc;
+    padding: 15px 20px;
+}
+
+.input-box {
+    background-color: transparent;
+}
+
+.submit-btn {
+    background-color: black;
+    font-size: 1.7rem;
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 3px 15px;
+    border: 3.5px solid rgb(0, 255, 195);
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #202020;
+    border-radius: 5px;
+    background-color: transparent;
+    user-select: none;
+    outline: none;
+}
+
+label {
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 5px;
+    background-color: transparent;
+    user-select: none;
+}
+
 .hero-section {
     background-color: #e3d5b9;
-    /* Beige */
     padding: 60px 20px;
     text-align: center;
 }

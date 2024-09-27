@@ -1,18 +1,51 @@
 // Components/Body.js
 import React from "react";
 import "./Body.css";
-import sticky from "./img-upscaling/landing-rs1.png";
 
 function Body() {
   return (
     <div className="landing-body">
-      {/* Hero section with main heading */}
-      <img
-        src={sticky}
-        className="landing-main-image"
-        alt="tusk_spin_his_balls"
-        title="tusk_act_4_spin_his_balls"
-      ></img>
+      <div className="info-request">
+        <div className="form-text-container">
+          <p className="form-text">¿Buscas acabar tu tesis? En CEOP Business somos los mejores!&nbsp;;-)</p>
+        </div>
+        <form className="formulario">
+          <div className="input-box">
+            <label htmlFor="name">Nombre:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"            
+            />
+          </div>
+          <div className="input-box">
+            <label htmlFor="email">Correo Electrónico:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+            />
+          </div>
+          <div className="input-box">
+            <label htmlFor="email">Número de celular:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+            />
+          </div>
+          <div className="input-box">
+            <label htmlFor="email">Consulta:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+            />
+          </div>
+          <button className="submit-btn" type="submit">Enviar</button>
+        </form>
+      </div>
+
       <section className="hero-section">
         <div className="hero-content">
           <h1>Consultoría Legal Profesional</h1>

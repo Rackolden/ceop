@@ -8,6 +8,9 @@
   font-style: normal;
   box-sizing: border-box;
   background-color: rgb(252, 252, 252);
+  overflow-x: auto;
+  scrollbar-width: thin; /* Barra de desplazamiento delgada */
+  scrollbar-color: grey transparent; /* Color del 'thumb' y del área de fondo */
 }
 
 :root {
@@ -16,3 +19,22 @@
   --secondaryColor: #fff;
   --textColor: #eee;
 }
+/* Para navegadores basados en WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray; /* Color de la parte que se arrastra */
+  border-radius: 4px; /* Bordes redondeados para el 'thumb' */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Color del área de fondo de la barra de desplazamiento */
+}
+
+/* Oculta las flechas de desplazamiento */
+::-webkit-scrollbar-button {
+  display: none; /* Oculta las flechas */
+}
+/* Oculta las flechas de desplazamiento en Firefox (no hay una propiedad específica, pero puedes ajustar el diseño) */

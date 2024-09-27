@@ -12,7 +12,7 @@ function NavBar() {
   const closeMenu = () => {
     setMenuOpen(false);
   };
-  
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       const menu = document.querySelector(".nav-item-container");
@@ -72,7 +72,11 @@ function NavBar() {
       </ul>
 
       {/* Botón para mostrar/ocultar el menú */}
-      <button className="nav-btn nav-close-btn" onClick={toggleMenu}>
+      <button
+        className="nav-btn nav-close-btn"
+        onClick={toggleMenu}
+        aria-expanded={menuOpen}
+      >
         <i className={menuOpen ? "fa-solid fa-x" : "fa-solid fa-bars"}></i>
       </button>
     </nav>
