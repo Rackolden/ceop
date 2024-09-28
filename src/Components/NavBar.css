@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  height: 8vh;
+  height: 50px;
   width: 100vw;
   padding: 0rem;
   background-color: var(--mainColor);
@@ -19,9 +19,9 @@
   display: flex;
   background-color: transparent;
   text-decoration: none;
-  align-items: baseline;
+  align-items: center;
   color: black;
-  padding-left: 10px;
+  padding-left: 8px;
   overflow: hidden;
   transition: color 0.3s ease-in 0ms;
 }
@@ -29,20 +29,20 @@
 .ceop-title {
   background-color: transparent;
   font-weight: 400;
-  font-size: 2.4rem;
+  font-size: 2.5vw;
   font-weight: 500;
   user-select: none;
 }
 
 .business-title {
   background-color: transparent;
-  font-size: 2.1rem;
+  font-size: 2.3vw;
   user-select: none;
 }
 
 .fa-graduation-cap {
   background-color: transparent;
-  font-size: 2.2rem;
+  font-size: 2.4vw;
   overflow-y: hidden;
   user-select: none;
 }
@@ -51,24 +51,20 @@
   color: white;
 }
 
+.fa-bars,
 .fa-x {
   background-color: transparent;
   overflow-y: hidden;
-}
-
-.fa-bars {
-  background-color: transparent;
-  overflow-y: hidden;
+  padding: 0;
+  margin: 0;
+  font-size: 37.5px;
 }
 
 .nav-item-container {
   background-color: transparent;
   display: flex;
   height: 100%;
-  justify-content: flex-end;
-  margin-left: auto;
-  margin-right: 20px;
-  position: relative;
+
   top: 0;
   align-items: center;
 }
@@ -76,12 +72,12 @@
 .nav-item {
   list-style-type: none;
   background-color: transparent;
-  font-size: 17px;
+  font-size: 1.1vw;
   margin-right: 2vw;
   overflow-y: hidden;
+  overflow-x: hidden;
   height: 40px;
   display: flex;
-  justify-content: center;
   align-items: center;
   position: relative;
   user-select: none;
@@ -93,6 +89,7 @@
   color: rgb(27, 27, 27);
   position: relative;
   transition: color 0.5s ease 0.1s;
+  overflow-x: hidden;
 }
 
 .nav-item::after {
@@ -131,9 +128,36 @@
   font-size: 2rem;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) and (orientation:portrait) {
+  .ceop-title {
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 40px;
+    font-weight: 500;
+    user-select: none;
+  }
+
+  .business-title {
+    background-color: transparent;
+    font-size: 35px;
+    user-select: none;
+  }
+
+  .fa-graduation-cap {
+    background-color: transparent;
+    font-size: 37.5px;
+    overflow-y: hidden;
+    user-select: none;
+  }
+
   .nav-btn {
-    display: block;
+    display: flex;
+  }
+
+  .navbar {
+    height: 6vmax;
+    /*chrome-vmax: vertical:10vh  ^   horizontal:10vw*/
+    align-items: center;
   }
 
   .nav-item-container {
@@ -150,7 +174,6 @@
     background-color: #51aefff2;
     transition: 0.7s;
     transform: translateX(-70vw);
-
   }
 
   .responsive_ul {
@@ -159,8 +182,11 @@
 
   .nav-close-btn {
     position: absolute;
-    top: 19px;
-    right: 1rem;
+    padding: 0;
+    margin: 0;
+    right: 3vw;
+    transform: translate(-0%, -0%);
+    height: auto;
   }
 
   .nav-item {
@@ -168,3 +194,4 @@
   }
 
 }
+

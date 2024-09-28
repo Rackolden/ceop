@@ -8,8 +8,8 @@ function Body() {
       <div className="info-request">
         <div className="form-text-container">
           <p className="form-text">
-            ¿Buscas acabar con tu vida? En CEOP Business somos los
-            mejores denigrándote!&nbsp;;-)
+            ¿Buscas acabar con tu vida? En CEOP Business somos los mejores
+            denigrándote!&nbsp;;-)
           </p>
         </div>
         <form className="formulario">
@@ -18,28 +18,56 @@ function Body() {
               <i className="fa-solid fa-circle-user label-icon"></i>
               &nbsp;&nbsp;Nombres y Apellidos:
             </label>
-            <input type="text" id="name" name="name" required placeholder="ej. Luis Pantoja Huamán"/>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="ej. Luis Pantoja Huamán"
+            />
           </div>
           <div className="input-box">
             <label htmlFor="email" className="label-text">
               <i className="fa-solid fa-circle-envelope label-icon"></i>
               &nbsp;&nbsp;Correo Electrónico:
             </label>
-            <input type="email" id="email" name="email" required placeholder="name@domain.com"/>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+              title="Ingrese una dirección de correo válida"
+              placeholder="name@domain.com"
+            />
           </div>
           <div className="input-box">
             <label htmlFor="phone" className="label-text">
               <i className="fa-solid fa-circle-phone label-icon"></i>
               &nbsp;&nbsp;Número de celular:
             </label>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" title="El número ingresado es incorrecto" placeholder="+51" required/>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              pattern="[0-9]{9}"
+              title="El número ingresado es incorrecto"
+              placeholder="+51"
+              required
+            />
           </div>
           <div className="input-box">
             <label htmlFor="question" className="label-text">
               <i className="fa-solid fa-font-awesome label-icon"></i>
               &nbsp;&nbsp;Tipo de Consulta:
             </label>
-            <input type="text" id="question" name="question" required placeholder="¿Qué servicio te interesa?"/>
+            <input
+              type="text"
+              id="question"
+              name="question"
+              required
+              placeholder="¿Qué servicio te interesa?"
+            />
           </div>
           <button className="submit-btn" type="submit">
             E n v i a r
