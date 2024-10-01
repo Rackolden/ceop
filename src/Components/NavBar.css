@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  height: 7vh;
   width: 100vw;
   padding: 0rem;
   background-color: var(--mainColor);
@@ -24,8 +24,11 @@
   padding-left: 8px;
   overflow: hidden;
   transition: color 0.3s ease-in 0ms;
+  outline: none;
 }
-
+.ceop-title, .business-title, .fa-graduation-cap {
+  outline: none ;
+}
 .ceop-title {
   background-color: transparent;
   font-weight: 400;
@@ -46,7 +49,17 @@
   overflow-y: hidden;
   user-select: none;
 }
-
+.icon-menu {
+  background-color: transparent;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  font-size: 1.1vw;
+  padding-top: 0px;
+  padding-bottom: 2px;
+  transition: font-size 0.3s ease 0s;
+}
 .navbar-title:hover {
   color: white;
 }
@@ -81,6 +94,7 @@
   align-items: center;
   position: relative;
   user-select: none;
+  transition: font-size 0.3s ease 0s;
 }
 
 .nav-links {
@@ -90,6 +104,9 @@
   position: relative;
   transition: color 0.5s ease 0.1s;
   overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  outline: none;
 }
 
 .nav-item::after {
@@ -102,15 +119,14 @@
   background-color: rgba(233, 233, 233, 0.832);
   transition: width 0.5s ease;
 }
-
-.nav-item:hover {
-  .nav-links {
-    color: white;
-  }
-}
-
 .nav-item:hover::after {
   width: 95%;
+}
+.nav-item:hover .nav-links {
+  color: white;
+}
+.nav-item:hover, .icon-menu:hover .icon-menu {
+  font-size: 1.15vw;
 }
 
 .nav-recursos {

@@ -12,7 +12,7 @@ function Body() {
             denigrándote!&nbsp;;-)
           </p>
         </div>
-        <form className="formulario">
+        <form className="formulario" action="https://docs.google.com/forms/d/e/1FAIpQLSdCmUjp-O-xygXferTlZFHmu-W0KMv9lDUWjjPl9q0bHiPAbw/formResponse" method="POST" id="googleForm">
           <div className="input-box">
             <label htmlFor="name" className="label-text">
               <i className="fa-solid fa-circle-user label-icon"></i>
@@ -21,9 +21,14 @@ function Body() {
             <input
               type="text"
               id="name"
-              name="name"
+              name="entry.136780736"
+              autoCapitalize="words"
+              autoComplete="on"
+              pattern="^(?:(?:[A-Za-z]{2,}\s+){2}[A-Za-z]{2,}(\s+[A-Za-z]{2,}){0,1})$"
+              title="Por favor, ingrese un nombre válido."
               required
               placeholder="ej. Luis Pantoja Huamán"
+              tabIndex="1"
             />
           </div>
           <div className="input-box">
@@ -34,11 +39,15 @@ function Body() {
             <input
               type="email"
               id="email"
-              name="email"
+              name="entry.1731768367"
+              autoCapitalize="none"
+              autoComplete="on"
               required
+              auto
               pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
               title="Ingrese una dirección de correo válida"
               placeholder="name@domain.com"
+              tabIndex="2"
             />
           </div>
           <div className="input-box">
@@ -48,12 +57,15 @@ function Body() {
             </label>
             <input
               type="tel"
+              autoComplete="off"
               id="phone"
-              name="phone"
-              pattern="[0-9]{9}"
+              name="entry.673356154"
+              autoCapitalize="none"
+              pattern="^9\d{8}$"
               title="El número ingresado es incorrecto"
               placeholder="+51"
               required
+              tabIndex="3"
             />
           </div>
           <div className="input-box">
@@ -63,14 +75,17 @@ function Body() {
             </label>
             <input
               type="text"
+              autoComplete="off"
               id="question"
-              name="question"
+              name="entry.1593289884"
+              autoCapitalize="sentences"
               required
-              placeholder="¿Qué servicio te interesa?"
+              placeholder="ej. Deseo información sobre la asesoría de tesis..."
+              tabIndex="4"
             />
           </div>
           <button className="submit-btn" type="submit">
-            E n v i a r
+          <i className="fa-solid fa-paper-plane-top icon-submit">&nbsp;</i>E n v i a r
           </button>
         </form>
       </div>

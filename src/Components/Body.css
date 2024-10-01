@@ -24,38 +24,50 @@
 .form-text-container {
     background-color: transparent;
     position: absolute;
-    top: 18%;
+    transform: translate(0px,0px);
     left: 3vw;
     width: 50vw;
     margin: 0;
-    padding: 0;
-    max-width: 90vw;
+    padding: 0px;
     overflow-wrap: break-word;
     overflow: hidden;
-    height: auto;
+    height: 50vh;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    border: 3px solid rgba(0, 255, 255, 0);
+    backdrop-filter: blur(5px);
 }
 
+.form-text-container:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 3px solid rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    border-radius: 25px;
+    scale: 1.02;
+}
 
 .form-text {
     background-color: transparent;
     user-select: none;
-    font-size: 4.5vw;
+    font-size: 4.4vw;
     white-space: normal;
     font-weight: 400;
-    color: rgb(240, 240, 240);
-    padding-left: 5vh;
-    padding-bottom: 2vh;
+    color: rgb(228, 228, 228);
+    padding-left: 2vh;
+    padding-bottom: 0;
     text-shadow: -0.7vh 0.7vh 1px rgba(0, 0, 0, 0.54);
     font-family: "Fredoka", sans-serif;
     cursor: pointer;
-    width: 45vw;
-    transition: color 0.2s ease-in 0s, transform 0.4s ease 0s, text-shadow 0.1s ease 0s;
+    width: auto;
+    transition: color 0.3s ease-in 0s, transform 0.2s ease 0s, text-shadow 0.3s ease 0s;
 }
 
 .form-text:hover {
-    color: white;
-    transform: translate(10px, -15px);
-    text-shadow: -0.9vh 0.9vh 0.5px rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transform: translate(5px, -10px);
+    text-shadow: -0.8vh 0.8vh 5px rgba(183, 243, 255, 0.15);
 }
 
 .formulario {
@@ -63,10 +75,10 @@
     box-sizing: border-box;
     background-color: #30d6ffa2;
     left: 60%;
-    top: 18%;
+
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    border: 5px solid rgba(63, 255, 252, 1);
+    border: 3px solid rgba(63, 255, 252, 1);
     padding: 2vh 2.2vw;
     transition: transform 0.2s ease-in 0s, box-shadow 0.2s ease 0s;
 }
@@ -85,6 +97,11 @@
 }
 
 /* CSS */
+.icon-submit {
+    background-color: transparent;
+    overflow: hidden;
+    padding-right: 5px;
+}
 .submit-btn {
     align-items: center;
     appearance: none;
@@ -95,7 +112,7 @@
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
-    display: inline-block;
+    display: flex;
     flex-direction: row;
     flex-shrink: 0;
     font-size: 16px;
@@ -208,7 +225,7 @@ input {
 }
 
 input:user-invalid {
-    border: 3px solid orange;
+    border: 3px solid rgb(255, 115, 0);
 }
 
 input:user-valid {
@@ -219,6 +236,7 @@ input:user-valid {
     background-color: transparent;
     font-size: 2.5vh;
     overflow-y: hidden;
+    outline: none;
 }
 
 .label-text {

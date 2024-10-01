@@ -40,22 +40,22 @@ function NavBar() {
       <ul className={`nav-item-container ${menuOpen ? "responsive_ul" : ""}`}>
         <li className="nav-item">
           <Link to="/" className="nav-links" onClick={closeMenu}>
-            INICIO
+          <i className="fa-solid fa-house icon-menu">&nbsp;</i>INICIO
           </Link>
         </li>
         <li className="nav-item">
           <Link to="/nosotros" className="nav-links" onClick={closeMenu}>
-            NOSOTROS
+          <i className="fa-solid fa-users icon-menu">&nbsp;</i>NOSOTROS
           </Link>
         </li>
         <li className="nav-item">
           <Link to="/servicios" className="nav-links" onClick={closeMenu}>
-            SERVICIOS
+          <i className="fa-solid fa-briefcase icon-menu">&nbsp;</i>SERVICIOS
           </Link>
         </li>
         <li className="nav-item">
           <Link to="/contacto" className="nav-links" onClick={closeMenu}>
-            CONTACTO
+          <i className="fa-solid fa-address-book icon-menu">&nbsp;</i>CONTACTO
           </Link>
         </li>
         <li className="nav-item">
@@ -66,7 +66,7 @@ function NavBar() {
             rel="noopener noreferrer"
             onClick={closeMenu}
           >
-            RECURSOS
+            <i className="fa-solid fa-books icon-menu">&nbsp;</i>RECURSOS
           </a>
         </li>
       </ul>
