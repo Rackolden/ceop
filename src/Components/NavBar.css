@@ -4,15 +4,59 @@
   height: 7vh;
   width: 100vw;
   padding: 0rem;
-  background-color: var(--mainColor);
   color: var(--textColor);
   align-items: center;
-  z-index: 999;
+  z-index: 1;
   position: fixed;
 }
 
 .navbar {
-  background: linear-gradient(180deg, #0088ff, #0088ff, #0088ff, #0088ff, #0088fff6, #0088ffef, #0088ffe6, #0088ffd4, #0088ffbf, #0088ffaa);
+  backdrop-filter: blur(2.5px);
+
+  background: linear-gradient(
+    180deg,
+    rgb(0, 136, 255),
+    rgba(1, 137, 255, 0.99),
+    rgba(2, 138, 255, 0.98),
+    rgba(3, 139, 255, 0.97),
+    rgba(4, 140, 255, 0.96),
+    rgba(5, 141, 255, 0.95),
+    rgba(6, 142, 255, 0.94),
+    rgba(7, 143, 255, 0.93),
+    rgba(8, 144, 255, 0.92),
+    rgba(9, 145, 255, 0.91),
+    rgba(10, 146, 255, 0.9),
+    rgba(11, 147, 255, 0.89),
+    rgba(12, 148, 255, 0.88),
+    rgba(13, 149, 255, 0.87),
+    rgba(14, 150, 255, 0.86),
+    rgba(15, 151, 255, 0.85),
+    rgba(16, 152, 255, 0.84),
+    rgba(17, 153, 255, 0.83),
+    rgba(18, 154, 255, 0.82),
+    rgba(19, 155, 255, 0.81),
+    rgba(20, 156, 255, 0.8),
+    rgba(21, 157, 255, 0.78),
+    rgba(22, 158, 255, 0.76),
+    rgba(23, 159, 255, 0.74),
+    rgba(24, 160, 255, 0.72),
+    rgba(25, 161, 255, 0.70),
+    rgba(26, 162, 255, 0.68),
+    rgba(27, 163, 255, 0.66),
+    rgba(28, 164, 255, 0.64),
+    rgba(29, 165, 255, 0.62),
+    rgba(30, 166, 255, 0.60),
+    rgba(31, 167, 255, 0.58),
+    rgba(32, 168, 255, 0.56),
+    rgba(33, 169, 255, 0.54)
+  );
+}
+
+@keyframes blur-navbar {
+  to {
+    backdrop-filter: blur(30px);
+    background: rgba(0, 0, 0, 0.24);
+  }
 }
 
 .navbar-title {
@@ -26,9 +70,13 @@
   transition: color 0.3s ease-in 0ms;
   outline: none;
 }
-.ceop-title, .business-title, .fa-graduation-cap {
-  outline: none ;
+
+.ceop-title,
+.business-title,
+.fa-graduation-cap {
+  outline: none;
 }
+
 .ceop-title {
   background-color: transparent;
   font-weight: 400;
@@ -49,17 +97,19 @@
   overflow-y: hidden;
   user-select: none;
 }
+
 .icon-menu {
   background-color: transparent;
   overflow: hidden;
   margin: 0;
   padding: 0;
   align-items: center;
-  font-size: 1.1vw;
-  padding-top: 0px;
-  padding-bottom: 2px;
+  font-size: 1.05vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   transition: font-size 0.3s ease 0s;
 }
+
 .navbar-title:hover {
   color: white;
 }
@@ -110,7 +160,7 @@
 }
 
 .nav-item::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 3px;
   left: 2.5%;
@@ -119,13 +169,17 @@
   background-color: rgba(233, 233, 233, 0.832);
   transition: width 0.5s ease;
 }
+
 .nav-item:hover::after {
   width: 95%;
 }
+
 .nav-item:hover .nav-links {
   color: white;
 }
-.nav-item:hover, .icon-menu:hover .icon-menu {
+
+.nav-item:hover,
+.icon-menu:hover .icon-menu {
   font-size: 1.15vw;
 }
 
@@ -144,26 +198,31 @@
   font-size: 2rem;
 }
 
-@media only screen and (max-width: 1024px) and (orientation:portrait) {
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
   .ceop-title {
     background-color: transparent;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 3.8vh;
     font-weight: 500;
     user-select: none;
   }
 
   .business-title {
     background-color: transparent;
-    font-size: 35px;
+    font-size: 3.2vh;
     user-select: none;
   }
 
   .fa-graduation-cap {
     background-color: transparent;
-    font-size: 37.5px;
+    font-size: 3.5vh;
     overflow-y: hidden;
     user-select: none;
+  }
+
+  .fa-bars,
+  .fa-x {
+    font-size: 3.6vh;
   }
 
   .nav-btn {
@@ -206,8 +265,17 @@
   }
 
   .nav-item {
-    font-size: 1.5rem
+    font-size: 1.5rem;
   }
 
+  .icon-menu {
+    background-color: transparent;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    font-size: 20px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
 }
-
