@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./Modal.css";
+import "./ModalPortal.css";
 
 const ModalPortal = ({ children, isOpen, onRequestClose }) => {
   // Si el modal no está abierto, no renderizamos nada
@@ -8,10 +8,8 @@ const ModalPortal = ({ children, isOpen, onRequestClose }) => {
 
   return ReactDOM.createPortal(
     <div className="modal-overlay">
-      <div className="modal-content">
-        {children}
-        <button onClick={onRequestClose}>Cerrar</button>
-      </div>
+      <div className="underlay" onClick={onRequestClose}></div>
+      <div className="modal-content">{children}</div>
     </div>,
     document.getElementById("modal-root") // Asegúrate de tener un div con este id en tu index.html
   );

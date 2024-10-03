@@ -1,0 +1,19 @@
+.nosotros-section {
+  user-select: none;
+  overflow: hidden;
+}
+.nosotros-title-container {
+  height: 20vh;
+  display: flex;
+  width: 100vw;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+.nosotros-title {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2vw;
+  word-spacing: 0.5vw;
+  letter-spacing: 0.5px;
+}

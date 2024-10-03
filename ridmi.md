@@ -18,3 +18,5 @@ git push origin --delete master
 Instalar node.js, npm
 create-react-app
 npm install react-router-dom
+npm install react modal
+npm install -g sass

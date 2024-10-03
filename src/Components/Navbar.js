@@ -30,7 +30,7 @@ function NavBar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-title">
+      <Link to="/home" className="navbar-title">
         <h1 className="ceop-title">CEOP&nbsp;</h1>
         <h2 className="business-title">Business&nbsp;</h2>
         <i className="fa-regular fa-graduation-cap"></i>
@@ -39,7 +39,7 @@ function NavBar() {
       {/* Clase dinámica basada en el estado del menú */}
       <ul className={`nav-item-container ${menuOpen ? "responsive_ul" : ""}`}>
         <li className="nav-item">
-          <Link to="/" className="nav-links" onClick={closeMenu}>
+          <Link to="/home" className="nav-links" onClick={closeMenu}>
           <i className="fa-solid fa-house icon-menu">&nbsp;</i>INICIO
           </Link>
         </li>

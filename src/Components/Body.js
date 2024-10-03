@@ -3,15 +3,18 @@ import React, { useState } from "react";
 import "./Body.css";
 import ModalTS from "./ModalTS";
 import ModalPP from "./ModalPP";
+import NosotrosBody from "./NosotrosBody";
 
 function Body() {
   // Estado para controlar qué modal está abierto
-  const [openModal, setOpenModal] = useState(null); // null si ningún modal está abierto
+  const [isOpenPP, setIsOpenPP] = useState(false);
+  const [isOpenTS, setIsOpenTS] = useState(false);
 
-  // Funciones para abrir los modales
-  const openTermsModal = () => setOpenModal("terms");
-  const openPrivacyModal = () => setOpenModal("privacy");
-  const closeModal = () => setOpenModal(null); // Cierra cualquier modal
+  const openModalPP = () => setIsOpenPP(true);
+  const closeModalPP = () => setIsOpenPP(false);
+  
+  const openModalTS = () => setIsOpenTS(true);
+  const closeModalTS = () => setIsOpenTS(false)
 
   // Se crea un estado para almacenar los datos del formulario
   const [formData, setFormData] = useState({
@@ -80,6 +83,7 @@ function Body() {
   return (
     <div className="landing-body">
       <div className="info-request">
+        <div className="container-transparent">
         <div className="form-text-container">
           <p className="form-text">
             ¿Buscas acabar con tu tesis? En CEOP Business somos los
@@ -182,26 +186,27 @@ function Body() {
               <a
                 className="label-link-confirm"
                 href="#"
-                onClick={openTermsModal}
+                onClick={openModalTS}
               >
                 términos de servicio
               </a>
               <ModalTS
-                isOpen={openModal === "terms"}
-                onRequestClose={closeModal}
+                isOpen={isOpenTS}
+                onRequestClose={closeModalTS}
               />{" "}
               y{" "}
               <a
                 className="label-link-confirm"
                 href="#"
-                onClick={openPrivacyModal}
+                onClick={openModalPP}
               >
                 políticas de privacidad
               </a>
               <ModalPP
-                isOpen={openModal === "privacy"}
-                onRequestClose={closeModal}
+                isOpen={isOpenPP}
+                onRequestClose={closeModalPP}
               />
+
             </label>
           </div>
 
@@ -210,8 +215,9 @@ function Body() {
             Enviar
           </button>
         </form>
+        </div>
       </div>
-
+      <NosotrosBody/>
       <section className="hero-section">
         <div className="hero-content">
           <h1>Consultoría Legal Profesional</h1>

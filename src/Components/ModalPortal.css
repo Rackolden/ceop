@@ -1,0 +1,30 @@
+.modal-overlay {
+    position: fixed; /* Mantiene el overlay fijo en la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Capa semitransparente */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+  }
+  
+  .underlay {
+    position: absolute; /* Asegura que el underlay cubra el modal */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.084); /* Color semitransparente */
+    z-index: 999; /* Debe estar debajo del modal content */
+  }
+  
+  .modal-content {
+    background: white; /* Fondo blanco para el contenido del modal */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    z-index: 1001; /* Debe estar encima del underlay */
+  }
+  
