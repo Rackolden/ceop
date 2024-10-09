@@ -1,19 +1,292 @@
 .nosotros-section {
   user-select: none;
   overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  position: relative;
 }
+
+.nosotros-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%; /* O ajusta al tamaño de la imagen */
+  height: 100%; /* O ajusta al tamaño de la imagen */
+  background-image: url("./img-upscaling/nosotrosbodybg.png"); /* Ruta de la imagen */
+  background-size: auto; /* Asegúrate de que la imagen cubra todo el elemento */
+  background-position: bottom right; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  transform: rotate(5deg); /* Rota la imagen 30 grados */
+  opacity: 0.5; /* Aplica transparencia */
+  z-index: 0; /* Asegúrate de que el pseudo-elemento esté detrás del contenido */
+}
+
 .nosotros-title-container {
   height: 20vh;
   display: flex;
-  width: 100vw;
+  width: auto;
   overflow: hidden;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
 }
-.nosotros-title {
+
+.nosotros-title-lato {
   text-align: center;
+  justify-self: center;
+  font-weight: 600;
+  font-size: 3.3vmax;
+  font-family: "Lato", sans-serif;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: auto;
+  overflow: hidden;
+  padding-bottom: 3px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.nosotros-title-lato::before {
+  content: "";
+  position: absolute;
+  bottom: -0px;
+  left: calc((100% - 30%) / 2);
+  width: 30%;
+  height: 3px;
+  background-color: #000000;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.nosotros-title-lato:hover::before {
+  width: 100%;
+  left: calc((100% - 100%) / 2);
+}
+
+.nosotros-title-lato.hovered::before {
+  width: 60%;
+  left: calc((100% - 60%) / 2);
+  height: 4.5px;
+}
+
+.nosotros-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; /* Alinea los contenedores de texto verticalmente al centro del contenedor principal */
+  justify-content: center;
+  gap: 62px;
+  height: 500px; /* Ajusta según la altura total */
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.nosotros-texto-container {
+  position: relative;
+  height: 225px; /* Altura del contenedor */
+  width: 425px; /* Calcula el ancho dinámicamente dejando espacio entre ellos */
+  text-align: center; /* Asegura que el texto esté centrado */
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 3vh;
+}
+
+.nosotros-texto-container::after {
+  content: '';
+  position: absolute;
+  top: 0%;
+  right: -1px;
+  width: 10px;
+  height: 100%;
+  background-color: black;
+}
+
+.nosotros-texto-container:last-child::after {
+  display: none; /* Elimina la línea después del último elemento */
+}
+
+.nosotros-cards-container div:nth-child(3n)::after {
+  display: none; /* Elimina la línea cuando los elementos están en una nueva línea */
+}
+
+.nosotros-texto-container:hover {
+  border-radius: 3vh;
+  height: 275px;
+  backface-visibility: hidden;
+  image-rendering: crisp-edges;
+  transform: scale(1.1);
+}
+
+.uno {
+  background-image: url(./img-upscaling/card-cover2.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.uno::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #00000039;
+  backdrop-filter: blur(0.5px);
+  filter: saturate(3) contrast(1.1) brightness(1.1);
+  opacity: 1;
+  content: "";
+  z-index: 0;
+}
+.uno:hover::before {
+  background-color: #00000000;
+  backdrop-filter: blur(7px);
+  opacity: 1;
+}
+.uno:hover {
+  background-image: url("./img-upscaling/trascendencia.png");
+  background-position: center;
+  background-size: cover;
+}
+.uno:hover {
+  .nosotros-title-lato {
+    color: red;
+  }
+}
+.tres {
+  background-image: url(./img-upscaling/card-cover3.png);
+  background-position: center;
+  background-size: cover;
+}
+.tres::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #0000005b;
+  backdrop-filter: blur(0.5px);
+  filter: saturate(3) contrast(1.1) brightness(1.1);
+  opacity: 1;
+  content: "";
+  z-index: 0;
+}
+.tres:hover::before {
+  background-color: #17170040;
+  backdrop-filter: blur(5px);
+  opacity: 1;
+}
+.tres:hover {
+  background-image: url("./img-upscaling/compromiso-min.png");
+  background-position: center;
+  background-size: cover;
+}
+.dos {
+  background-image: url(./img-upscaling/card-cover1.png);
+  background-position: center;
+  background-size: cover;
+}
+.dos::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #00000061;
+  backdrop-filter: blur(0.5px);
+  filter: saturate(2.5) contrast(1.1) brightness(1.1);
+  opacity: 1;
+  content: "";
+  z-index: 0;
+}
+.dos:hover::before {
+  background-color: #00000057;
+  backdrop-filter: blur(5px);
+  opacity: 1;
+}
+.dos:hover {
+  background-image: url("./img-upscaling/profesionales-min.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.first-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.nosotros-card-title {
+  background-color: transparent;
   font-weight: bolder;
-  font-size: 2vw;
-  word-spacing: 0.5vw;
-  letter-spacing: 0.5px;
+  font-family: "Lato", sans-serif;
+  font-size: 2.9vmax;
+  overflow: hidden;
+  font-weight: 600;
+  z-index: 1;
+  color: white;
+}
+.nosotros-texto-container:hover .first-content {
+  height: 0px;
+  opacity: 0;
+}
+.second-content {
+  height: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+  transition: all 0.5s ease;
+  overflow: hidden;
+  opacity: 0;
+  background-color: transparent;
+}
+
+.nosotros-texto {
+  font-weight: 600;
+  text-align: center;
+  width: 90%;
+  height: auto;
+  overflow: hidden;
+  font-size: 1.3rem;
+  background-color: transparent;
+  color: white;
+}
+.nosotros-texto-container:hover .second-content {
+  transform: rotate(0deg);
+  opacity: 1;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .nosotros-title-lato {
+    font-size: 4.5vh;
+  }
+
+  .nosotros-cards-container {
+    height: 150vh;
+  }
+
+  .nosotros-texto-container {
+    width: 90vw;
+    border: 1px solid #000;
+    border-radius: 10px;
+  }
+
+  .nosotros-card-title {
+    background-color: rgba(0, 255, 255, 0.344);
+    border-radius: 10px;
+    padding: 4vh;
+  }
+
+  .nosotros-texto {
+    width: 70vw;
+    font-size: 2vh;
+    padding: 2vh 4vw;
+    width: 90%;
+  }
 }

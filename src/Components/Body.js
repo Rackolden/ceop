@@ -83,7 +83,6 @@ function Body() {
   return (
     <div className="landing-body">
       <div className="info-request">
-        <div className="container-transparent">
         <div className="form-text-container">
           <p className="form-text">
             ¿Buscas acabar con tu tesis? En CEOP Business somos los
@@ -215,7 +214,6 @@ function Body() {
             Enviar
           </button>
         </form>
-        </div>
       </div>
       <NosotrosBody/>
       <section className="hero-section">
