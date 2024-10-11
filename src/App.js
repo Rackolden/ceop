@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import NavBar from "./Components/NavBar";
 import Body from "./Components/Body";
 
+
 function App() {
   return (
     <div>

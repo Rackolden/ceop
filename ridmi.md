@@ -20,3 +20,5 @@ create-react-app
 npm install react-router-dom
 npm install react modal
 npm install -g sass
+npm install css-loader style-loader postcss-loader --save-dev
+npm install swiper

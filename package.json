@@ -18,6 +18,7 @@
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.26.2",
     "react-scripts": "^5.0.1",
+    "swiper": "^11.1.14",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -45,7 +46,10 @@
     ]
   },
   "devDependencies": {
+    "css-loader": "^7.1.2",
     "postcss": "^8.4.31",
+    "postcss-loader": "^8.1.1",
+    "style-loader": "^4.0.0",
     "workbox-webpack-plugin": "^7.1.0"
   }
 }
