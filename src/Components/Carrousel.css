@@ -1,0 +1,283 @@
+
+.swiper {
+  width: 90%;
+  height: auto;
+  min-height: 75vh;
+  background-color: transparent;
+}
+/*-Contenedor de cartas-*/
+.swiper-slide {
+  padding: 10px 10px;
+  border-radius: 15px;
+  user-select: none;
+}
+.card-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.badge-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: transparent;
+  gap: 4px;
+}
+.badge {
+    margin: 16px 0px 18px;
+    padding: 8px 14px;
+    width: fit-content;
+    border-radius: 50px;
+    font-size: 12.5px;
+    font-weight: bolder;
+    transition: all 0.3s ease;
+  }
+.badge:hover {
+  color:black;
+}
+.card-title {
+  padding: 10px 10px;
+  font-size: 1.3rem;
+  font-style: italic;
+  border-radius: 10px;
+}
+.card-title .name-slider {
+  background-color: transparent;
+}
+.card1 {
+  box-shadow: 3px 3px 10px rgba(255, 0, 157, 0.1),
+    -3px -3px 10px rgba(255, 0, 157, 0.1);
+  border: 3px solid rgba(218, 0, 76, 0.8);
+  background-color: rgba(255, 0, 157, 0.03);
+}
+
+.card1 .badge {
+  color: rgb(102, 0, 63);
+  background-color: rgba(232, 0, 143, 0.2);
+}
+
+.card1 .badge:hover {
+  background-color: rgb(227, 0, 140);
+}
+
+.card1 .card-title {
+  background-color: rgba(224, 0, 138, 0.25);
+}
+
+.card2 {
+  box-shadow: 3px 3px 10px rgba(0, 47, 255, 0.1),
+    -3px -3px 10px rgba(0, 47, 255, 0.1);
+  border: 3px solid rgba(0, 47, 255, 0.6);
+  background-color: rgba(0, 47, 255, 0.03);
+}
+
+.card2 .badge {
+  color: rgb(0, 18, 99);
+  background-color: rgba(0, 47, 255, 0.2);
+}
+
+.card2 .badge:hover {
+  background-color: rgb(0, 41, 226);
+}
+
+.card2 .card-title {
+  background-color: rgba(0, 43, 236, 0.25);
+}
+
+.card3 {
+  box-shadow: 3px 3px 10px rgba(47, 0, 255, 0.1),
+    -3px -3px 10px rgba(47, 0, 255, 0.1);
+  border: 3px solid rgba(47, 60, 255, 0.7);
+  background-color: rgba(47, 0, 255, 0.01);
+}
+
+.card3 .badge {
+  color: rgb(22, 0, 122);
+  background-color: rgba(44, 0, 239, 0.15);
+}
+
+.card3 .badge:hover {
+  background-color: rgb(42, 0, 228);
+}
+
+.card3 .card-title {
+  background-color: rgba(43, 0, 232, 0.25);
+}
+.card4 {
+  box-shadow: 3px 3px 10px rgba(0, 217, 255, 0.1),
+    -3px -3px 10px rgba(0, 217, 255, 0.1);
+  border: 3px solid rgba(0, 166, 255, 0.8);
+  background-color: rgba(0, 200, 236, 0.03);
+}
+
+.card4 .badge {
+  color: rgb(0, 44, 86);
+  background-color: rgba(0, 217, 255, 0.15);
+}
+
+.card4 .badge:hover {
+  background-color: rgb(0, 193, 227);
+}
+
+.card4 .card-title {
+  background-color: rgba(0, 195, 230, 0.25);
+}
+
+.card5 {
+  box-shadow: 3px 3px 10px rgba(0, 255, 242, 0.1),
+    -3px -3px 10px rgba(0, 255, 242, 0.1);
+  border: 3px solid rgba(0, 168, 160, 0.6);
+  background-color: rgba(0, 255, 242, 0.03);
+}
+
+.card5 .badge {
+  color: rgb(0, 92, 88);
+  background-color: rgba(0, 255, 242, 0.2);
+}
+
+.card5 .badge:hover {
+  background-color: rgba(0, 199, 189, 0.8);
+}
+
+.card5 .card-title {
+  background-color: rgba(0, 194, 184, 0.3);
+}
+.card6 {
+  box-shadow: 3px 3px 10px rgba(0, 255, 149, 0.1),
+    -3px -3px 10px rgba(0, 255, 149, 0.1);
+  border: 3px solid rgba(0, 196, 114, 0.7);
+  background-color: rgba(0, 199, 116, 0.03);
+}
+
+.card6 .badge {
+  color: rgb(0, 95, 55);
+  background-color: rgba(0, 255, 149, 0.15);
+}
+
+.card6 .badge:hover {
+  background-color: rgb(0, 171, 100);
+}
+
+.card6 .card-title {
+  background-color: rgba(0, 224, 131, 0.25);
+}
+.card7 {
+  box-shadow: 3px 3px 10px rgba(0, 255, 49, 0.1),
+    -3px -3px 10px rgba(0, 255, 49, 0.1);
+  border: 3px solid rgba(0, 225, 45, 0.9);
+  background-color: rgba(0, 91, 17, 0.05);
+}
+
+.card7 .badge {
+  color: rgb(0, 105, 21);
+  background-color: rgba(0, 255, 49, 0.15);
+}
+
+.card7 .badge:hover {
+  background-color: rgb(0, 207, 41);
+}
+
+.card7 .card-title {
+  background-color: rgba(0, 223, 45, 0.25);
+}
+.card8 {
+  box-shadow: 3px 3px 10px rgba(77, 255, 0, 0.1),
+    -3px -3px 10px rgba(77, 255, 0, 0.1);
+  border: 3px solid rgba(71, 238, 0, 0.9);
+  background-color: rgba(77, 255, 0, 0.03);
+}
+
+.card8 .badge {
+  color: rgba(32, 105, 0, 1);
+  background-color: rgba(77, 255, 0, 0.15);
+}
+
+.card8 .badge:hover {
+  background-color: rgba(68, 227, 0, 0.8);
+}
+
+.card8 .card-title {
+  background-color: rgba(69, 231, 0, 0.25);
+}
+
+.card9 {
+  box-shadow: 3px 3px 10px rgba(174, 255, 0, 0.1),
+    -3px -3px 10px rgba(174, 255, 0, 0.1);
+  border: 3px solid rgba(165, 242, 1, 0.8);
+  background-color: rgba(166, 243, 1, 0.03);
+}
+
+.card9 .badge {
+  color: rgb(73, 107, 0);
+  background-color: rgba(174, 255, 0, 0.15);
+}
+
+.card9 .badge:hover {
+  background-color: rgba(161, 236, 0, 0.9);
+}
+
+.card9 .card-title {
+  background-color: rgba(162, 237, 0, 0.25);
+}
+
+.card10 {
+  box-shadow: 3px 3px 10px rgba(255, 230, 0, 0.1),
+    -3px -3px 10px rgba(255, 230, 0, 0.1);
+  border: 3px solid rgba(237, 213, 0, 0.8);
+  background-color: rgba(228, 206, 0, 0.03);
+}
+
+.card10 .badge {
+  color: rgb(87, 78, 0);
+  background-color: rgba(236, 213, 0, 0.2);
+}
+
+.card10 .badge:hover {
+  background-color: rgba(231, 208, 0, 0.8);
+}
+
+.card10 .card-title {
+  background-color: rgba(235, 211, 0, 0.25);
+}
+
+.card11 {
+  box-shadow: 3px 3px 10px rgba(255, 130, 0, 0.1),
+    -3px -3px 10px rgba(255, 130, 0, 0.1);
+  border: 3px solid rgba(255, 132, 0, 0.8);
+  background-color: rgba(239, 123, 0, 0.03);
+}
+
+.card11 .badge {
+  color: rgb(104, 54, 0);
+  background-color: rgba(232, 120, 0, 0.2);
+}
+
+.card11 .badge:hover {
+  background-color: rgb(226, 117, 0);
+}
+
+.card11 .card-title {
+  background-color: rgba(234, 121, 0, 0.25);
+}
+
+.card12 {
+  box-shadow: 3px 3px 10px rgba(255, 30, 0, 0.1),
+    -3px -3px 10px rgba(255, 30, 0, 0.1);
+  border: 3px solid rgba(255, 30, 0, 0.7);
+  background-color: rgba(255, 30, 0, 0.03);
+}
+
+.card12 .badge {
+  color: rgb(94, 11, 0);
+  background-color: rgba(255, 30, 0, 0.2);
+}
+
+.card12 .badge:hover {
+  background-color: rgb(234, 27, 0);
+}
+
+.card12 .card-title {
+  background-color: rgba(238, 28, 0, 0.25);
+}

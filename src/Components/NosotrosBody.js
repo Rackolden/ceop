@@ -1,9 +1,5 @@
 import "./NosotrosBody.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import Carrousel from "./Carrousel";
 import carrousel1 from "./img-upscaling/carrousel/card-carrousel1.png";
 import carrousel2 from "./img-upscaling/carrousel/card-carrousel2.png";
 import carrousel3 from "./img-upscaling/carrousel/card-carrousel3.png";
@@ -117,73 +113,7 @@ function NosotrosBody() {
           </div>
         </div>
       </div>
-
-      <div className="container">
-        <div className="card-wrapper">
-          <ul className="card-list">
-            <li className="card-item">
-              <a className="card-link card1">
-                <img src={carrousel1} alt="Card Image" className="card-image" />
-                <div className="badge-container">
-                  <p className="badge">Metodología</p>
-                  <p className="badge">Contabilidad</p>
-                  <p className="badge">Derecho</p>
-                </div>
-                <h2 className="card-title">
-                  <p className="name-slider">Joe Skimo</p>"Pienso que los
-                  carruseles son una herramienta UI/UX poderosa, que ayuda a
-                  entender mejor el contenido de una página web..."
-                </h2>
-              </a>
-            </li>
-            <li className="card-item">
-              <a className="card-link card2">
-                <img src={carrousel2} alt="Card Image" className="card-image" />
-                <div className="badge-container">
-                  <p className="badge">Metodología</p>
-                  <p className="badge">Contabilidad</p>
-                  <p className="badge">Derecho</p>
-                </div>
-                <h2 className="card-title">
-                  <p className="name-slider">Joe Skimo</p>"Pienso que los
-                  carruseles son una herramienta UI/UX poderosa, que ayuda a
-                  entender mejor el contenido de una página web..."
-                </h2>
-              </a>
-            </li>
-            <li className="card-item">
-              <a className="card-link card3">
-                <img src={carrousel3} alt="Card Image" className="card-image" />
-                <div className="badge-container">
-                  <p className="badge">Metodología</p>
-                  <p className="badge">Contabilidad</p>
-                  <p className="badge">Derecho</p>
-                </div>
-                <h2 className="card-title">
-                  <p className="name-slider">Joe Skimo</p>"Pienso que los
-                  carruseles son una herramienta UI/UX poderosa, que ayuda a
-                  entender mejor el contenido de una página web..."
-                </h2>
-              </a>
-            </li>
-            <li className="card-item">
-              <a className="card-link card4">
-                <img src={carrousel4} alt="Card Image" className="card-image" />
-                <div className="badge-container">
-                  <p className="badge">Metodología</p>
-                  <p className="badge">Contabilidad</p>
-                  <p className="badge">Derecho</p>
-                </div>
-                <h2 className="card-title">
-                  <p className="name-slider">Joe Skimo</p>"Pienso que los
-                  carruseles son una herramienta UI/UX poderosa, que ayuda a
-                  entender mejor el contenido de una página web..."
-                </h2>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <Carrousel/>
     </>
   );
 }
