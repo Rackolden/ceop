@@ -1,9 +1,5 @@
 import "./NosotrosBody.css";
 import Carrousel from "./Carrousel";
-import carrousel1 from "./img-upscaling/carrousel/card-carrousel1.png";
-import carrousel2 from "./img-upscaling/carrousel/card-carrousel2.png";
-import carrousel3 from "./img-upscaling/carrousel/card-carrousel3.png";
-import carrousel4 from "./img-upscaling/carrousel/card-carrousel4.png";
 
 import React, { useState } from "react";
 
@@ -14,7 +10,7 @@ function NosotrosBody() {
 
   return (
     <>
-      <div className={`nosotros-section ${hovered ? "hovered" : ""}`}>
+      <div id="NosotrosLink" className={`nosotros-section ${hovered ? "hovered" : ""}`}>
         <div className="nosotros-title-container">
           <p className={`nosotros-title-lato ${hovered ? "hovered" : ""}`}>
             Sobre Nosotros

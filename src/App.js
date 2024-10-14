@@ -11,8 +11,8 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} /> {/* Redirige a /home */}
-          <Route path="/home" element={<Body />} />
+          <Route path="/" element={<Body />}/>
+          <Route path="/home" element={<Navigate to="/" />} /> {/* Redirige a /home */}
         </Routes>
       </Router>
     </div>

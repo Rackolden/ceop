@@ -81,7 +81,7 @@ function Body() {
   };
 
   return (
-    <div className="landing-body">
+    <div className="landing-body" id="InicioLink">
       <div className="info-request">
         <div className="form-text-container">
           <p className="form-text">

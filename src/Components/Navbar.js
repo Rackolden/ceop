@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import "./NavBar.css";
 
 function NavBar() {
@@ -39,22 +39,22 @@ function NavBar() {
       {/* Clase dinámica basada en el estado del menú */}
       <ul className={`nav-item-container ${menuOpen ? "responsive_ul" : ""}`}>
         <li className="nav-item">
-          <Link to="/home" className="nav-links" onClick={closeMenu}>
+          <Link to="InicioLink" smooth={true} duration={800}  className="nav-links" onClick={closeMenu}>
           <i className="fa-solid fa-house icon-menu">&nbsp;</i>INICIO
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/nosotros" className="nav-links" onClick={closeMenu}>
+          <Link to="NosotrosLink" smooth={true} duration={800} className="nav-links" onClick={closeMenu}>
           <i className="fa-solid fa-users icon-menu">&nbsp;</i>NOSOTROS
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/servicios" className="nav-links" onClick={closeMenu}>
+          <Link to="ServiciosLink" smooth={true} duration={800} className="nav-links" onClick={closeMenu}>
           <i className="fa-solid fa-briefcase icon-menu">&nbsp;</i>SERVICIOS
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/contacto" className="nav-links" onClick={closeMenu}>
+          <Link to="ContactoLink" smooth={true} duration={800} className="nav-links"  onClick={closeMenu}>
           <i className="fa-solid fa-address-book icon-menu">&nbsp;</i>CONTACTO
           </Link>
         </li>
