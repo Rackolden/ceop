@@ -22,3 +22,10 @@ npm install react modal
 npm install -g sass
 npm install css-loader style-loader postcss-loader --save-dev
 npm install swiper
+git init
+git add .
+git status -m "mensaje"
+git branch
+git push origin branch-name
+ngrok config add-authtoken 2nLS3Bc3UzGKpvvfaPrtcTQxMb5_2foCs3kEMA3x64ewRY6P5
+ngrok http http://localhost:3000

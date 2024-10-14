@@ -1,9 +1,32 @@
-
 .swiper {
-  width: 90%;
+  width: 85%;
   height: auto;
-  min-height: 75vh;
+  min-height: 65vh;
   background-color: transparent;
+  margin-top: 150px !important;
+  margin-bottom: 50px !important;
+}
+.fog-effect {
+  margin-top: 150px !important;
+  margin-bottom: 50px !important;
+  width:15vw;
+  height: 65vh;
+  left: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, transparent 100%);
+  z-index: 100;
+  position: absolute
+}
+.fog-effect1 {
+  margin-top: 150px !important;
+  margin-bottom: 50px !important;
+  width:15vw;
+  height: 65vh;
+  display: flex;
+  justify-content: right;
+  right: 0;
+  background: linear-gradient(to right, transparent 0%, rgb(255, 255, 255) 50%);
+  z-index: 100;
+  position: absolute
 }
 /*-Contenedor de cartas-*/
 .swiper-slide {
@@ -11,11 +34,26 @@
   border-radius: 15px;
   user-select: none;
 }
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}
+.swiper-pagination-bullet {
+  background: blue; /* Color de los dots */
+}
+
+/* Cambiar el color del dot activo */
+.swiper-pagination-bullet-active {
+  color: red; /* Color del dot activo */
+}
 .card-image {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 14/9;
   object-fit: cover;
   border-radius: 15px;
+}
+.name-slider {
+  font-weight: bolder;
 }
 .badge-container {
   display: flex;
@@ -26,22 +64,27 @@
   gap: 4px;
 }
 .badge {
-    margin: 16px 0px 18px;
-    padding: 8px 14px;
-    width: fit-content;
-    border-radius: 50px;
-    font-size: 12.5px;
-    font-weight: bolder;
-    transition: all 0.3s ease;
-  }
+  margin: 16px 0px 18px;
+  padding: 8px 14px;
+  width: fit-content;
+  border-radius: 50px;
+  font-size: 12.5px;
+  font-weight: bolder;
+  transition: all 0.3s ease;
+}
 .badge:hover {
-  color:black;
+  color: white !important;
 }
 .card-title {
   padding: 10px 10px;
-  font-size: 1.3rem;
+  margin-top: 0px;
+  font-size: 1.15rem;
   font-style: italic;
   border-radius: 10px;
+  opacity: 0.8;
+}
+.name-slider {
+  margin-bottom: 3px;
 }
 .card-title .name-slider {
   background-color: transparent;

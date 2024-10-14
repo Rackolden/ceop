@@ -13,6 +13,7 @@
   background-color: rgb(252, 252, 252);
   scrollbar-width: thin; /* Barra de desplazamiento delgada */
   scrollbar-color: grey transparent; /* Color del 'thumb' y del área de fondo */
+  scroll-behavior: smooth;
 }
 
 :root {

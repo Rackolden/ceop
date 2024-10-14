@@ -1,8 +1,13 @@
 import "./Carrousel.css";
-import React from 'react'
-
+import React, {useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y, Mousewheel, EffectCoverflow } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  A11y,
+  Mousewheel,
+  Autoplay,
+} from "swiper/modules";
 // Import Swiper styles
 import "swiper/css/bundle";
 import carrousel1 from "./img-upscaling/carrousel/card-carrousel1.png";
@@ -19,23 +24,53 @@ import carrousel11 from "./img-upscaling/carrousel/card-carrousel11.png";
 import carrousel12 from "./img-upscaling/carrousel/card-carrousel12.png";
 
 function Carrousel() {
+  const [activeIndex, setActiveIndex] = useState(0); 
   return (
-    <div className="swiper-global-container">
+    <>
+      <div className="fog-effect">
+
+      </div>
+      <div className="fog-effect1">
+
+      </div>
       <Swiper
         className="mySwiper"
-        modules={[Navigation, Pagination, A11y, Mousewheel]}
-        spaceBetween={15}
-        slidesPerView={3}
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+        modules={[Navigation, Pagination, A11y, Mousewheel, Autoplay]}
+        spaceBetween={30}
+        centeredSlides={true}
         direction="horizontal"
         mousewheel={{
-          invert: true, // Asegúrate de que esto esté en false
+          invert: true, // Cambiar a false si quieres comportamiento natural
           sensitivity: 10,
           enabled: true,
           thresholdDelta: 10,
         }}
         loop={true}
         navigation
+        autoplay={{
+          delay: 1500, // Tiempo en milisegundos
+          disableOnInteraction: false, // Si el autoplay debe detenerse al interactuar con el slider
+        }}
+        speed={500}
         pagination={{ clickable: true, dynamicBullets: true }}
+        breakpoints={{
+          // when window width is <= 600px (móviles)
+          600: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          // when window width is <= 900px (tablets)
+          900: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          // when window width is > 900px (escritorio)
+          1200: {
+            slidesPerView: 3.5,
+            spaceBetween: 20,
+          },
+        }}
       >
         <SwiperSlide className="card1">
           <img src={carrousel1} alt="Empleado(1)" className="card-image"></img>
@@ -206,7 +241,8 @@ function Carrousel() {
           </h2>
         </SwiperSlide>
       </Swiper>
-      </div>
+      </>
+
   );
 }
 
