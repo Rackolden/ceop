@@ -24,8 +24,11 @@ npm install css-loader style-loader postcss-loader --save-dev
 npm install swiper
 git init
 git add .
-git status -m "mensaje"
+git status 
+git commit -m "mensaje"
+git remote add origin https://github.com/tu-usuario/tu-repositorio.git
 git branch
+git pull origin branch-name
 git push origin branch-name
 ngrok config add-authtoken 2nLS3Bc3UzGKpvvfaPrtcTQxMb5_2foCs3kEMA3x64ewRY6P5
 ngrok http http://localhost:3000
