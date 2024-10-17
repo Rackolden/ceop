@@ -1,0 +1,17 @@
+.video-ceop-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: fit-content;
+    background-color: transparent;
+}
+.video-container {
+    width: 80vw;
+    height: 45vw;
+    border: 7px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

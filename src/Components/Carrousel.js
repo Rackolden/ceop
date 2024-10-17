@@ -26,7 +26,12 @@ import carrousel12 from "./img-upscaling/carrousel/card-carrousel12.png";
 function Carrousel() {
   const [activeIndex, setActiveIndex] = useState(0); 
   return (
-    <>
+    <div>
+    <div className="carousel-title-meet-us-container" id="EquipoLink">
+    <div className="carousel-title-meet-us">
+      <h1 className="carousel-title-meet-us-text"> Conoce a nuestro equipo!</h1>
+    </div>
+    </div>
       <div className="fog-effect">
 
       </div>
@@ -241,7 +246,7 @@ function Carrousel() {
           </h2>
         </SwiperSlide>
       </Swiper>
-      </>
+      </div>
 
   );
 }

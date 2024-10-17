@@ -1,7 +1,7 @@
 import "./NosotrosBody.css";
 import Carrousel from "./Carrousel";
-
-import React, { useState } from "react";
+import { motion } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
 
 function NosotrosBody() {
   const [hovered, setHovered] = useState(false);
@@ -10,16 +10,29 @@ function NosotrosBody() {
 
   return (
     <>
-      <div id="NosotrosLink" className={`nosotros-section ${hovered ? "hovered" : ""}`}>
-        <div className="nosotros-title-container">
+      <motion.div
+        id="NosotrosLink"
+        className={`nosotros-section ${hovered ? "hovered" : ""}`}
+      >
+        <motion.div
+          className="nosotros-title-container"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 1 }}
+          transition={{ duration: 0.2 }}
+        >
           <p className={`nosotros-title-lato ${hovered ? "hovered" : ""}`}>
             Sobre Nosotros
           </p>
-        </div>
+        </motion.div>
 
         <div className="nosotros-cards-container">
-          <div
+          <motion.div
             className="nosotros-texto-container uno"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ amount: 0.3 }}
+            transition={{ duration: 0.3 }}
             onMouseEnter={() => {
               setHovered(true);
               setHoveredGappy1(true);
@@ -42,14 +55,18 @@ function NosotrosBody() {
                 tesis para estudiantes de pregrado y postgrado.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           <div
             className={`gappy1 ${hoveredGappy1 ? "hoveredGappy1" : ""}`}
           ></div>
 
-          <div
+          <motion.div
             className="nosotros-texto-container dos"
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ amount: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
             onMouseEnter={() => {
               setHovered(true);
               setHoveredGappy1(true);
@@ -75,13 +92,17 @@ function NosotrosBody() {
                 formación académica y experiencia práctica.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           <div
             className={`gappy2 ${hoveredGappy2 ? "hoveredGappy2" : ""}`}
           ></div>
-          <div
+          <motion.div
             className="nosotros-texto-container tres"
+            initial={{ opacity: 0, x: -90 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ amount: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.5 }}
             onMouseEnter={() => {
               setHovered(true);
               setHoveredGappy2(true);
@@ -106,10 +127,10 @@ function NosotrosBody() {
                 efectivamente.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
-      <Carrousel/>
+      </motion.div>
+      <Carrousel />
     </>
   );
 }

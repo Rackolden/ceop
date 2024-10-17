@@ -1,8 +1,9 @@
 .nosotros-section {
   user-select: none;
   overflow: hidden;
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
   position: relative;
+  box-sizing: border-box;
 }
 
 .nosotros-section::before {
@@ -48,6 +49,7 @@
   position: relative;
   width: auto;
   overflow: hidden;
+  cursor: pointer;
   padding-bottom: 3px;
   padding-right: 20px;
   padding-left: 20px;
@@ -56,9 +58,9 @@
 .nosotros-title-lato::before {
   content: "";
   position: absolute;
-  bottom: -0px;
-  left: calc((100% - 30%) / 2);
-  width: 30%;
+  bottom: 0px;
+  left: calc((100% - 35%) / 2);
+  width: 35%;
   height: 3px;
   background-color: #2d2d2d;
   border-radius: 20px;
@@ -71,8 +73,8 @@
 }
 
 .nosotros-title-lato.hovered::before {
-  width: 60%;
-  left: calc((100% - 60%) / 2);
+  width: 65%;
+  left: calc((100% - 65%) / 2);
   height: 3px;
 }
 
@@ -95,7 +97,7 @@
   box-sizing: border-box;
   text-align: center;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: height 0.3s ease, transform 0.3s linear;
   border-radius: 3vh;
   cursor: pointer;
 }
@@ -103,8 +105,6 @@
 .nosotros-texto-container:hover {
   border-radius: 3vh;
   height: 275px;
-  backface-visibility: hidden;
-  image-rendering: crisp-edges;
   transform: scale(1.1);
 }
 
@@ -148,7 +148,6 @@
 .uno:hover::before {
   background-color: #00000000;
   backdrop-filter: blur(7px);
-  opacity: 1;
 }
 .uno:hover {
   background-image: url("./img-upscaling/trascendencia.png");

@@ -1,13 +1,56 @@
+.carousel-title-meet-us-container {
+  display: flex;
+  width: auto;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 0px;
+}
+.carousel-title-meet-us {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px 0px;
+}
+.carousel-title-meet-us::before {
+  content: "";
+  position: absolute;
+  width:45%;
+  bottom: 0;
+  height: 3px;
+  left: 22.5%;
+  background-color: rgb(37, 37, 37);
+  border-radius: 20px;
+  transition: all 0.5s ease-in-out;
+}
+.carousel-title-meet-us:hover::before {
+  width: 95%;
+  left:2.5%;
+}
+.carousel-title-meet-us-text {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  user-select: none !important;
+  background-color: transparent;
+}
 .swiper {
   width: 85%;
   height: auto;
   min-height: 65vh;
   background-color: transparent;
-  margin-top: 150px !important;
+  margin-top: 100px !important;
   margin-bottom: 50px !important;
 }
 .fog-effect {
-  margin-top: 150px !important;
+  margin-top: 100px !important;
   margin-bottom: 50px !important;
   width:15vw;
   height: 65vh;
@@ -17,7 +60,7 @@
   position: absolute
 }
 .fog-effect1 {
-  margin-top: 150px !important;
+  margin-top: 100px !important;
   margin-bottom: 50px !important;
   width:15vw;
   height: 65vh;

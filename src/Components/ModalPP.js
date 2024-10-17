@@ -10,12 +10,12 @@ function ModalPP({ isOpen, onRequestClose }) {
       onRequestClose={onRequestClose}
     >
       {" "}
-      // Cierra el modal al hacer clic fuera o presionar "Esc"
       <div className="elemento-modal-PP">
         <div className="texto-modal">
           <div className="título-modal-contenedor">
             <h2 className="título-modal">Política de Privacidad</h2>
           </div>
+          <br></br>
           <p className="date-modal">Última actualización: [02 / 10 / 2024]</p>{" "}
           <br></br>
           <p>

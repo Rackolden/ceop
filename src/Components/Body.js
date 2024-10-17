@@ -4,6 +4,8 @@ import "./Body.css";
 import ModalTS from "./ModalTS";
 import ModalPP from "./ModalPP";
 import NosotrosBody from "./NosotrosBody";
+import VideoCeop from "./VideoCeop";
+import { motion } from "framer-motion";
 
 function Body() {
   // Estado para controlar qué modal está abierto
@@ -12,9 +14,9 @@ function Body() {
 
   const openModalPP = () => setIsOpenPP(true);
   const closeModalPP = () => setIsOpenPP(false);
-  
+
   const openModalTS = () => setIsOpenTS(true);
-  const closeModalTS = () => setIsOpenTS(false)
+  const closeModalTS = () => setIsOpenTS(false);
 
   // Se crea un estado para almacenar los datos del formulario
   const [formData, setFormData] = useState({
@@ -81,15 +83,30 @@ function Body() {
   };
 
   return (
-    <div className="landing-body" id="InicioLink">
-      <div className="info-request">
-        <div className="form-text-container">
-          <p className="form-text">
+    <motion.div
+      className="landing-body"
+      id="InicioLink"
+    >
+      <motion.div className="info-request" initial={{ opacity: 0.9 }} // Estado inicial: invisible
+      animate={{ opacity: 1 }} // Estado final: completamente visible
+      transition={{ duration: 1.8 }}>
+        <motion.div className="form-text-container" initial={{ opacity: 0, x: -150 }} // Desplazamiento inicial
+            animate={{ opacity: 1, x: 0 }} // Posición final
+            transition={{ duration: 0.8, delay: 0.2 }}>
+          <p
+            className="form-text"
+          >
             ¿Buscas acabar con tu tesis? En CEOP Business somos los
             mejores!&nbsp;;-)
           </p>
-        </div>
-        <form className="formulario" onSubmit={handleSubmit}>
+        </motion.div>
+        <motion.div
+          className="formulario"
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, x: -100 }} // Desplazamiento inicial
+          animate={{ opacity: 1, x: 0 }} // Posición final
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
           <div className="input-box">
             <label htmlFor="name" className="label-text">
               <i className="fa-solid fa-circle-user label-icon"></i>
@@ -182,30 +199,14 @@ function Body() {
             />{" "}
             <label className="label-text-confirm">
               &nbsp;&nbsp;Acepto los{" "}
-              <a
-                className="label-link-confirm"
-                href="#"
-                onClick={openModalTS}
-              >
+              <a className="label-link-confirm" href="#" onClick={openModalTS}>
                 términos de servicio
               </a>
-              <ModalTS
-                isOpen={isOpenTS}
-                onRequestClose={closeModalTS}
-              />{" "}
-              y{" "}
-              <a
-                className="label-link-confirm"
-                href="#"
-                onClick={openModalPP}
-              >
+              <ModalTS isOpen={isOpenTS} onRequestClose={closeModalTS} /> y{" "}
+              <a className="label-link-confirm" href="#" onClick={openModalPP}>
                 políticas de privacidad
               </a>
-              <ModalPP
-                isOpen={isOpenPP}
-                onRequestClose={closeModalPP}
-              />
-
+              <ModalPP isOpen={isOpenPP} onRequestClose={closeModalPP} />
             </label>
           </div>
 
@@ -213,9 +214,11 @@ function Body() {
             <i className="fa-solid fa-paper-plane-top icon-submit">&nbsp;</i>
             Enviar
           </button>
-        </form>
-      </div>
-      <NosotrosBody/>
+        </motion.div>
+      </motion.div>
+
+      <NosotrosBody />
+      <VideoCeop />
       <section className="hero-section">
         <div className="hero-content">
           <h1>Consultoría Legal Profesional</h1>
@@ -256,7 +259,7 @@ function Body() {
           Contáctanos
         </a>
       </section>
-    </div>
+    </motion.div>
   );
 }
 

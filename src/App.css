@@ -10,7 +10,7 @@
   font-weight: 300;
   font-style: normal;
   box-sizing: border-box;
-  background-color: rgb(252, 252, 252);
+  background-color: rgba(255, 255, 255, 0.795);
   scrollbar-width: thin; /* Barra de desplazamiento delgada */
   scrollbar-color: grey transparent; /* Color del 'thumb' y del área de fondo */
   scroll-behavior: smooth;

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Modal.css";
-import Modal from "react-modal";
 import ModalPortal from "./ModalPortal";
 
 function ModalTS({ isOpen, onRequestClose }) {
