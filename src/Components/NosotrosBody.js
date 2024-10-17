@@ -16,10 +16,6 @@ function NosotrosBody() {
       >
         <motion.div
           className="nosotros-title-container"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 1 }}
-          transition={{ duration: 0.2 }}
         >
           <p className={`nosotros-title-lato ${hovered ? "hovered" : ""}`}>
             Sobre Nosotros

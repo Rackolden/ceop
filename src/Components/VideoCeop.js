@@ -3,62 +3,69 @@ import YouTube from "react-youtube";
 import "./VideoCeop.css";
 
 function VideoCeop() {
-    const videoRef = useRef(null);
-    const [isReady, setIsReady] = useState(false); // Añadir estado para verificar si el video está listo
+  const videoRef = useRef(null); // Referencia para el reproductor de video
+  const containerRef = useRef(null); // Referencia para el contenedor del video
+  // Función que se ejecuta cuando el video está listo
+  const IsTheVideoReady = (controlador_video) => {
+    videoRef.current = controlador_video.target; // Guardar el controlador del video en videoRef
+    console.log("Valores asignados correctamente");
+  };
 
-    const opts = {
-        height: '621',
-        width: '1104',
-        playerVars: {
-            autoplay: 0,
-        },
-    };
-
-    const onReady = (event) => {
-        videoRef.current = event.target;
-        setIsReady(true);  // Marcar que el video está listo
-    };
-
-    useEffect(() => {
-        if (isReady && videoRef.current) {  // Esperar hasta que el video esté listo
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting) {
-                        videoRef.current.playVideo();  // Reproduce el video si está en el viewport
-                    } else {
-                        videoRef.current.pauseVideo();  // Pausa el video si sale del viewport
-                    }
-                },
-                { threshold: 0.5 }
-            );
-
-            const videoElement = document.querySelector('.youtube-video');
-            if (videoElement) {
-                observer.observe(videoElement);
-            }
-
-            return () => {
-                if (videoElement) {
-                    observer.unobserve(videoElement);
-                }
-            };
+  useEffect(() => {
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (videoRef.current) {
+          if (entry.isIntersecting) {
+            videoRef.current.playVideo();
+            console.log("Video reproducido");
+          } else {
+            videoRef.current.pauseVideo();
+            console.log("Video pausado");
+          }
         }
-    }, [isReady]);  // Asegurarse de que el efecto se ejecute solo cuando el video esté listo
+      });
+    };
 
-    return (
-      <>
-        <div className="video-ceop-section">
-          <div className="video-container">
-            <YouTube
-                className="youtube-video"
-                videoId="EZ9zyBuDyG8"
-                opts={opts}
-                onReady={onReady} 
-            />
-          </div>
+    // Crear un IntersectionObserver
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.5, // El 50% del video debe ser visible para disparar el evento
+    });
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current); // Observar el contenedor del video
+    }
+
+    // Limpieza: dejar de observar cuando el componente se desmonte
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
+  const opts = {
+    height: "621",
+    width: "1104",
+    playerVars: {
+        autoplay: 0,   // No se reproduce automáticamente al cargar
+        loop: 1,       // Activar el loop (1 es encendido)
+        playlist: "EZ9zyBuDyG8" // Se necesita la misma videoId para que el loop funcione
+      },
+  };
+  return (
+    <>
+      <div className="video-ceop-section">
+        <div ref={containerRef} className="video-container">
+          <YouTube
+            className="youtube-video"
+            videoId="EZ9zyBuDyG8"
+            opts={opts}
+            onReady={IsTheVideoReady}
+          />
         </div>
-      </>
-    );
+      </div>
+    </>
+  );
 }
 
 export default VideoCeop;
