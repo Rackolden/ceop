@@ -4,6 +4,7 @@ import "./Body.css";
 import ModalTS from "./ModalTS";
 import ModalPP from "./ModalPP";
 import NosotrosBody from "./NosotrosBody";
+import Servicios from "./Servicios";
 import VideoCeop from "./VideoCeop";
 import { motion } from "framer-motion";
 
@@ -218,6 +219,7 @@ function Body() {
       </motion.div>
 
       <NosotrosBody />
+      <Servicios />
       <VideoCeop />
       <section className="hero-section">
         <div className="hero-content">
