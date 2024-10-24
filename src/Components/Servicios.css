@@ -1,0 +1,108 @@
+.services-slider {
+  display: flex;
+  margin: 7.5vmax 0;
+  width: auto;
+  height: auto;
+  min-height: 100vmin;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.service-slider-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+  min-width: 200px;
+  width: 350px;
+  border-radius: 17.5px;
+  background-color: transparent;
+  background-position: center;
+  background-size: cover;
+  transition: width 0.25s linear, height 0.25s linear,
+    background-size 0.3s linear;
+}
+.service-slider-container:hover {
+  width: 450px;
+  height: 600px;
+  background-size: cover;
+}
+
+.service-slider-container:hover .service-title {
+  font-size: 20px;
+}
+
+.service1 {
+  background-image: url(./img-upscaling/services/service1.png);
+}
+
+.service2 {
+  background-image: url(./img-upscaling/services/service2.png);
+}
+
+.service3 {
+  background-image: url(./img-upscaling/services/service3.png);
+}
+
+.service4 {
+  background-image: url(./img-upscaling/services/service4.png);
+}
+
+.service5 {
+  background-image: url(./img-upscaling/services/service5.png);
+}
+
+.service-slider-content-container {
+  display: flex;
+  gap: 30px;
+  width: 95%;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+}
+
+.service-title-container {
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 90%;
+  box-sizing: border-box;
+  padding: 12.5px 15px;
+}
+
+.service-title {
+  background-color: transparent;
+  height: fit-content;
+  font-size: 130%;
+  text-align: center;
+  transition: font-size 0.3s linear;
+}
+
+.line-gap-service {
+  height: 4px;
+  width: 60%;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.view-service-container {
+  width: auto;
+  padding: 10px 15px;
+  height: auto;
+  background-color: black;
+  color: white;
+  backdrop-filter: blur(10px);
+  transition: background-color 0.5s ease, color 0.2s ease;
+}
+
+.view-service-container:hover {
+  background-color: white;
+  color: black;
+}
+
+.view-service {
+  font-size: 20px;
+  font-weight: bolder;
+
+  background-color: transparent;
+  text-decoration: underline;
+}

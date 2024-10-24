@@ -80,22 +80,6 @@ function NavBar() {
           className="nav-item"
           initial={{ opacity: 0, x: -150 }} // Desplazamiento inicial
           animate={{ opacity: 1, x: 0 }} // Posición final
-          transition={{ duration: 1, delay: 0.55 }}
-        >
-          <Link
-            to="EquipoLink"
-            smooth={true}
-            duration={800}
-            className="nav-links"
-            onClick={closeMenu}
-          >
-            <i className="fa-duotone fa-solid fa-typewriter icon-menu"></i>&nbsp;EQUIPO
-          </Link>
-        </motion.div>
-        <motion.div
-          className="nav-item"
-          initial={{ opacity: 0, x: -150 }} // Desplazamiento inicial
-          animate={{ opacity: 1, x: 0 }} // Posición final
           transition={{ duration: 0.6, delay: 0.9 }}
         >
           <Link

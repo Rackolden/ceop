@@ -1,5 +1,5 @@
 import "./Carrousel.css";
-import React, {useState} from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -8,7 +8,6 @@ import {
   Mousewheel,
   Autoplay,
 } from "swiper/modules";
-// Import Swiper styles
 import "swiper/css/bundle";
 import carrousel1 from "./img-upscaling/carrousel/card-carrousel1.png";
 import carrousel2 from "./img-upscaling/carrousel/card-carrousel2.png";
@@ -24,23 +23,20 @@ import carrousel11 from "./img-upscaling/carrousel/card-carrousel11.png";
 import carrousel12 from "./img-upscaling/carrousel/card-carrousel12.png";
 
 function Carrousel() {
-  const [activeIndex, setActiveIndex] = useState(0); 
   return (
     <div>
-    <div className="carousel-title-meet-us-container" id="EquipoLink">
-    <div className="carousel-title-meet-us">
-      <h1 className="carousel-title-meet-us-text"> Conoce a nuestro equipo!</h1>
-    </div>
-    </div>
-      <div className="fog-effect">
-
+      <div className="carousel-title-meet-us-container">
+        <div className="carousel-title-meet-us">
+          <h1 className="carousel-title-meet-us-text">
+            {" "}
+            Conoce a nuestro equipo!
+          </h1>
+        </div>
       </div>
-      <div className="fog-effect1">
-
-      </div>
+      <div className="fog-effect"></div>
+      <div className="fog-effect1"></div>
       <Swiper
         className="mySwiper"
-        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         modules={[Navigation, Pagination, A11y, Mousewheel, Autoplay]}
         spaceBetween={30}
         centeredSlides={true}
@@ -246,8 +242,7 @@ function Carrousel() {
           </h2>
         </SwiperSlide>
       </Swiper>
-      </div>
-
+    </div>
   );
 }
 

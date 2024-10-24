@@ -1,7 +1,7 @@
 import "./NosotrosBody.css";
 import Carrousel from "./Carrousel";
 import { motion } from "framer-motion";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 
 function NosotrosBody() {
   const [hovered, setHovered] = useState(false);
@@ -39,7 +39,7 @@ function NosotrosBody() {
             }}
           >
             <div className="first-content">
-              <p className="nosotros-card-title">Trascendencia</p>
+              <p className="nosotros-card-title">Misión</p>
               <div className="ver-más-container">
                 <p className="ver-más-texto">Ver Más</p>
               </div>
@@ -75,7 +75,7 @@ function NosotrosBody() {
             }}
           >
             <div className="first-content">
-              <p className="nosotros-card-title">Profesionales</p>
+              <p className="nosotros-card-title">Visión</p>
               <div className="ver-más-container">
                 <p className="ver-más-texto">Ver Más</p>
               </div>
@@ -119,8 +119,8 @@ function NosotrosBody() {
               <p className="nosotros-texto">
                 En CEOP Business, entendemos que elaborar una tesis puede ser un
                 desafío. Nos comprometemos a ofrecer un servicio personalizado
-                que ayude a los estudiantes a estructurar sus ideas
-                efectivamente.
+                que ayude a los profesionales a estructurar sus ideas
+                en una tésis de éxito.
               </p>
             </div>
           </motion.div>

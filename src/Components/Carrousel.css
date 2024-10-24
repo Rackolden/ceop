@@ -22,17 +22,17 @@
 .carousel-title-meet-us::before {
   content: "";
   position: absolute;
-  width:45%;
+  width: 45%;
   bottom: 0;
   height: 3px;
-  left: 22.5%;
+  left: 27.5%;
   background-color: rgb(37, 37, 37);
   border-radius: 20px;
   transition: all 0.5s ease-in-out;
 }
 .carousel-title-meet-us:hover::before {
   width: 95%;
-  left:2.5%;
+  left: 2.5%;
 }
 .carousel-title-meet-us-text {
   font-family: "Lato", sans-serif;
@@ -52,24 +52,28 @@
 .fog-effect {
   margin-top: 100px !important;
   margin-bottom: 50px !important;
-  width:15vw;
+  width: 15vw;
   height: 65vh;
   left: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 1) 50%, transparent 100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 50%,
+    transparent 100%
+  );
   z-index: 100;
-  position: absolute
+  position: absolute;
 }
 .fog-effect1 {
   margin-top: 100px !important;
   margin-bottom: 50px !important;
-  width:15vw;
+  width: 15vw;
   height: 65vh;
   display: flex;
   justify-content: right;
   right: 0;
   background: linear-gradient(to right, transparent 0%, rgb(255, 255, 255) 50%);
   z-index: 100;
-  position: absolute
+  position: absolute;
 }
 /*-Contenedor de cartas-*/
 .swiper-slide {
