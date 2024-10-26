@@ -1,13 +1,7 @@
 import "./Carrousel.css";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  Pagination,
-  A11y,
-  Mousewheel,
-  Autoplay,
-} from "swiper/modules";
+import { Navigation, A11y, Mousewheel, Autoplay } from "swiper/modules";
 import "swiper/css/bundle";
 import carrousel1 from "./img-upscaling/carrousel/card-carrousel1.png";
 import carrousel2 from "./img-upscaling/carrousel/card-carrousel2.png";
@@ -33,215 +27,269 @@ function Carrousel() {
           </h1>
         </div>
       </div>
-      <div className="fog-effect"></div>
-      <div className="fog-effect1"></div>
-      <Swiper
-        className="mySwiper"
-        modules={[Navigation, Pagination, A11y, Mousewheel, Autoplay]}
-        spaceBetween={30}
-        centeredSlides={true}
-        direction="horizontal"
-        mousewheel={{
-          invert: true, // Cambiar a false si quieres comportamiento natural
-          sensitivity: 10,
-          enabled: true,
-          thresholdDelta: 10,
-        }}
-        loop={true}
-        navigation
-        autoplay={{
-          delay: 1500, // Tiempo en milisegundos
-          disableOnInteraction: false, // Si el autoplay debe detenerse al interactuar con el slider
-        }}
-        speed={500}
-        pagination={{ clickable: true, dynamicBullets: true }}
-        breakpoints={{
-          // when window width is <= 600px (móviles)
-          600: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          // when window width is <= 900px (tablets)
-          900: {
-            slidesPerView: 2,
-            spaceBetween: 15,
-          },
-          // when window width is > 900px (escritorio)
-          1200: {
-            slidesPerView: 3.5,
-            spaceBetween: 20,
-          },
-        }}
-      >
-        <SwiperSlide className="card1">
-          <img src={carrousel1} alt="Empleado(1)" className="card-image"></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-        <SwiperSlide className="card2">
-          <img src={carrousel2} alt="Empleado(2)" className="card-image"></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-        <SwiperSlide className="card3">
-          <img src={carrousel3} alt="Empleado(3)" className="card-image"></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-        <SwiperSlide className="card4">
-          <img src={carrousel4} alt="Empleado(4)" className="card-image"></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-        <SwiperSlide className="card5">
-          <img src={carrousel5} alt="Empleado(5)" className="card-image"></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-        <SwiperSlide className="card6">
-          <img src={carrousel6} alt="Empleado(6)" className="card-image"></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-        <SwiperSlide className="card7">
-          <img src={carrousel7} alt="Empleado(7)" className="card-image"></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-        <SwiperSlide className="card8">
-          <img src={carrousel8} alt="Empleado(8)" className="card-image"></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-        <SwiperSlide className="card9">
-          <img src={carrousel9} alt="Empleado(9)" className="card-image"></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-        <SwiperSlide className="card10">
-          <img
-            src={carrousel10}
-            alt="Empleado(10)"
-            className="card-image"
-          ></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-        <SwiperSlide className="card11">
-          <img
-            src={carrousel11}
-            alt="Empleado(11)"
-            className="card-image"
-          ></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-        <SwiperSlide className="card12">
-          <img
-            src={carrousel12}
-            alt="Empleado(12)"
-            className="card-image"
-          ></img>
-          <div className="badge-container">
-            <p className="badge">Metodología</p>
-            <p className="badge">Contabilidad</p>
-            <p className="badge">Derecho</p>
-          </div>
-          <h2 className="card-title">
-            <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
-            son una herramienta UI/UX poderosa, que ayuda a entender mejor el
-            contenido de una página web..."
-          </h2>
-        </SwiperSlide>
-      </Swiper>
+
+      <div className="swiper-container">
+        <div className="fog-effect-container">
+          <div className="fog-effect fe1"></div>
+          <div className="fog-effect fe2"></div>
+        </div>
+        <Swiper
+          className="mySwiper"
+          modules={[Navigation, A11y, Mousewheel, Autoplay]}
+          spaceBetween={30}
+          centeredSlides={true}
+          direction="horizontal"
+          mousewheel={{
+            invert: true, // Cambiar a false si quieres comportamiento natural
+            sensitivity: 10,
+            enabled: true,
+            thresholdDelta: 10,
+          }}
+          loop={true}
+          navigation
+          autoplay={{
+            delay: 2000, // Tiempo en milisegundos
+            disableOnInteraction: false, // Si el autoplay debe detenerse al interactuar con el slider
+          }}
+          speed={500}
+          breakpoints={{
+            720: {
+              slidesPerView: 1.5,
+              spaceBetween: 5,
+            },
+            800: {
+              slidesPerView: 1.75,
+              spaceBetween: 5,
+            },
+            1000: {
+              slidesPerView: 2.25,
+              spaceBetween: 10,
+            },
+            1200: {
+              slidesPerView: 2.75,
+              spaceBetween: 10,
+            },
+            1000: {
+              slidesPerView: 3.25,
+              spaceBetween: 15,
+            },
+            1200: {
+              slidesPerView: 3.5,
+              spaceBetween: 15,
+            },
+            // when window width is > 1300px (escritorio)
+            1300: {
+              slidesPerView: 4.625,
+              spaceBetween: 20,
+            },
+          }}
+        >
+          <SwiperSlide className="card1">
+            <img
+              src={carrousel1}
+              alt="Empleado(1)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+          <SwiperSlide className="card2">
+            <img
+              src={carrousel2}
+              alt="Empleado(2)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+          <SwiperSlide className="card3">
+            <img
+              src={carrousel3}
+              alt="Empleado(3)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+          <SwiperSlide className="card4">
+            <img
+              src={carrousel4}
+              alt="Empleado(4)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+          <SwiperSlide className="card5">
+            <img
+              src={carrousel5}
+              alt="Empleado(5)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+          <SwiperSlide className="card6">
+            <img
+              src={carrousel6}
+              alt="Empleado(6)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+          <SwiperSlide className="card7">
+            <img
+              src={carrousel7}
+              alt="Empleado(7)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+          <SwiperSlide className="card8">
+            <img
+              src={carrousel8}
+              alt="Empleado(8)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+          <SwiperSlide className="card9">
+            <img
+              src={carrousel9}
+              alt="Empleado(9)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+          <SwiperSlide className="card10">
+            <img
+              src={carrousel10}
+              alt="Empleado(10)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+          <SwiperSlide className="card11">
+            <img
+              src={carrousel11}
+              alt="Empleado(11)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+          <SwiperSlide className="card12">
+            <img
+              src={carrousel12}
+              alt="Empleado(12)"
+              className="card-image"
+            ></img>
+            <div className="badge-container">
+              <p className="badge">Metodología</p>
+              <p className="badge">Contabilidad</p>
+              <p className="badge">Derecho</p>
+            </div>
+            <h2 className="card-title">
+              <p className="name-slider">Joe Skimo</p>"Pienso que los carruseles
+              son una herramienta UI/UX poderosa, que ayuda a entender mejor el
+              contenido de una página web..."
+            </h2>
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </div>
   );
 }

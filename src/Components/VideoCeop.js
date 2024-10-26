@@ -2,9 +2,34 @@ import React, { useRef, useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import "./VideoCeop.css";
 
+const calcularAnchoVideo = () => {
+  const anchoVideo = window.innerWidth;
+
+  if (anchoVideo <= 720) {
+    return anchoVideo * 0.85;
+  } else if (anchoVideo > 720 && anchoVideo <= 820) {
+    return anchoVideo * 0.8;
+  } else if (anchoVideo > 820 && anchoVideo <= 1000) {
+    return anchoVideo * 0.75;
+  } else if (anchoVideo > 1000 && anchoVideo <= 1200) {
+    return anchoVideo * 0.7;
+  } else if (anchoVideo > 1200) {
+    return anchoVideo * 0.65;
+  }
+};
+
+const calcularAltoVideo = () => {
+  const ancho = calcularAnchoVideo();
+  console.log(ancho)
+  return (ancho * 9) / 16;
+};
+
+const addedMargin = 30;
+
 function VideoCeop() {
   const videoRef = useRef(null); // Referencia para el reproductor de video
   const containerRef = useRef(null); // Referencia para el contenedor del video
+
   // Función que se ejecuta cuando el video está listo
   const IsTheVideoReady = (controlador_video) => {
     videoRef.current = controlador_video.target;
@@ -44,75 +69,48 @@ function VideoCeop() {
     };
   }, []);
 
-  //Función que hace resize al <Youtube>
+  const [newWidth, setNewWidth] = useState(calcularAnchoVideo()); // Estado para newWidth
+  const [newHeight, setNewHeight] = useState(calcularAltoVideo()); // Estado para newHeight
+
   const [videoOptions, setVideoOptions] = useState({
-    height: "576",
-    width: "1024",
+    height: `${newHeight}px`,
+    width: `${newWidth}px`,
     playerVars: {
       autoplay: 0,
       modestbranding: 1,
       rel: 0,
     },
   });
-
   const [videoContainer, setVideoContainer] = useState({
-    height: "616px",
-    width: "1064px",
+    height: `${newHeight+addedMargin}px`,
+    width: `${newWidth+addedMargin}px`,
+    minHeight: `${newHeight+addedMargin}px`,
+    minWidth: `${newWidth+addedMargin}px`,  
   });
 
-  const [newWidth, setNewWidth] = useState(0); // Estado para newWidth
-  const [newHeight, setNewHeight] = useState(0); // Estado para newHeight
+  const updateVideoDimensions=()=> {
+    if(videoRef.current) {
+      const calcWidth = calcularAnchoVideo();
+      const calcHeight=calcularAltoVideo();
 
-  const updateVideoDimensions = () => {
-    if (videoRef.current) {
-      const viewportWidth = window.innerWidth;
-      let calculatedWidth = undefined,
-        calculatedHeight = undefined;
-
-      if (viewportWidth <= 720) {
-        calculatedWidth = viewportWidth * 0.85;
-      } else if (viewportWidth > 720 && viewportWidth <= 820) {
-        calculatedWidth = viewportWidth * 0.8;
-      } else if (viewportWidth > 820 && viewportWidth <= 1000) {
-        calculatedWidth = viewportWidth * 0.75;
-      } else if (viewportWidth > 1000 && viewportWidth <= 1200) {
-        calculatedWidth = viewportWidth * 0.7;
-      } else if (viewportWidth > 1200) {
-        calculatedWidth = viewportWidth * 0.65;
-      }
-
-      calculatedHeight = calculatedWidth * (9 / 16);
-
-      setNewWidth(calculatedWidth);
-      setNewHeight(calculatedHeight);
-
-      setVideoOptions((prevOpts) => ({
-        ...prevOpts,
-        height: newHeight.toFixed(0), // toFixed(0) sirve para mantener los valores redondeados
-        width: newWidth.toFixed(0),
-      }));
+      setNewWidth(calcWidth);
+      setNewHeight(calcHeight);
+      setVideoOptions({
+        height: `${calcHeight}px`,
+        width: `${calcWidth}px`,
+      });
+      setVideoContainer({
+        height: `${calcHeight+addedMargin}px`,
+        width: `${calcWidth+addedMargin}px`,
+        minHeight: `${calcHeight+addedMargin}px`,
+        minWidth: `${calcWidth+addedMargin}px`,
+      });
     }
-  };
-
-  const updateVideoContainerDimensions = () => {
-    let widthVideoContainer = undefined,
-      heightVideoContainer = undefined;
-
-    widthVideoContainer = Math.round(newWidth + 20);
-    heightVideoContainer = Math.round(newHeight + 20);
-
-    //Hacer resize al box del vídeo
-    setVideoContainer((prevOpts) => ({
-      ...prevOpts,
-      height: `${heightVideoContainer}px`, // Convertir a string con "px"
-      width: `${widthVideoContainer}px`,
-    }));
-  };
+  }
 
   useEffect(() => {
     const handleResize = () => {
       updateVideoDimensions();
-      updateVideoContainerDimensions();
     };
 
     window.addEventListener("resize", handleResize);
@@ -126,6 +124,8 @@ function VideoCeop() {
   return (
     <>
       <div className="video-ceop-section">
+
+
         <div className="bars-global-container">
           <div className="bars-right-container">
             <div className="bars-right"></div>
@@ -138,10 +138,11 @@ function VideoCeop() {
             <div className="bars-left"></div>
           </div>
         </div>
+        
 
         <div
           ref={containerRef}
-          style={{ height: videoContainer.height, width: videoContainer.width }}
+          style={{ height: videoContainer.height, width: videoContainer.width, minHeight: videoContainer.minHeight, minWidth: videoContainer.minWidth}}
           className="video-container"
         >
           <YouTube
