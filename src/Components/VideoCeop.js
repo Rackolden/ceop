@@ -1,6 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import YouTube from "react-youtube";
 import "./VideoCeop.css";
+
+import article_video1 from "./img-upscaling/article_video/article_video1.jpg";
 
 const calcularAnchoVideo = () => {
   const anchoVideo = window.innerWidth;
@@ -20,11 +23,11 @@ const calcularAnchoVideo = () => {
 
 const calcularAltoVideo = () => {
   const ancho = calcularAnchoVideo();
-  console.log(ancho)
+  console.log(ancho);
   return (ancho * 9) / 16;
 };
 
-const addedMargin = 30;
+const addedMargin = 17.5;
 
 function VideoCeop() {
   const videoRef = useRef(null); // Referencia para el reproductor de video
@@ -82,16 +85,16 @@ function VideoCeop() {
     },
   });
   const [videoContainer, setVideoContainer] = useState({
-    height: `${newHeight+addedMargin}px`,
-    width: `${newWidth+addedMargin}px`,
-    minHeight: `${newHeight+addedMargin}px`,
-    minWidth: `${newWidth+addedMargin}px`,  
+    height: `${newHeight + addedMargin}px`,
+    width: `${newWidth + addedMargin}px`,
+    minHeight: `${newHeight + addedMargin}px`,
+    minWidth: `${newWidth + addedMargin}px`,
   });
 
-  const updateVideoDimensions=()=> {
-    if(videoRef.current) {
+  const updateVideoDimensions = () => {
+    if (videoRef.current) {
       const calcWidth = calcularAnchoVideo();
-      const calcHeight=calcularAltoVideo();
+      const calcHeight = calcularAltoVideo();
 
       setNewWidth(calcWidth);
       setNewHeight(calcHeight);
@@ -100,13 +103,13 @@ function VideoCeop() {
         width: `${calcWidth}px`,
       });
       setVideoContainer({
-        height: `${calcHeight+addedMargin}px`,
-        width: `${calcWidth+addedMargin}px`,
-        minHeight: `${calcHeight+addedMargin}px`,
-        minWidth: `${calcWidth+addedMargin}px`,
+        height: `${calcHeight + addedMargin}px`,
+        width: `${calcWidth + addedMargin}px`,
+        minHeight: `${calcHeight + addedMargin}px`,
+        minWidth: `${calcWidth + addedMargin}px`,
       });
     }
-  }
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -124,25 +127,14 @@ function VideoCeop() {
   return (
     <>
       <div className="video-ceop-section">
-
-
-        <div className="bars-global-container">
-          <div className="bars-right-container">
-            <div className="bars-right"></div>
-            <div className="bars-right"></div>
-            <div className="bars-right"></div>
-          </div>
-          <div className="bars-left-container">
-            <div className="bars-left"></div>
-            <div className="bars-left"></div>
-            <div className="bars-left"></div>
-          </div>
-        </div>
-        
-
         <div
           ref={containerRef}
-          style={{ height: videoContainer.height, width: videoContainer.width, minHeight: videoContainer.minHeight, minWidth: videoContainer.minWidth}}
+          style={{
+            height: videoContainer.height,
+            width: videoContainer.width,
+            minHeight: videoContainer.minHeight,
+            minWidth: videoContainer.minWidth,
+          }}
           className="video-container"
         >
           <YouTube
@@ -151,6 +143,77 @@ function VideoCeop() {
             opts={videoOptions}
             onReady={IsTheVideoReady}
           />
+        </div>
+
+        <div className="article-section">
+          <Link href="#" className="article-video-link">
+            <div className="article-video">
+              <img
+                src={article_video1}
+                alt="imagen del artículo"
+                className="video-article-image"
+              ></img>
+
+              <p className="video-article-title">
+                Elaboración de Tesis Académicas Usando IA
+              </p>
+              <p className="video-article-desc">
+                La inteligencia artificial transforma la investigación
+                académica, facilitando la búsqueda, análisis de datos y
+                estructuración de tesis, optimizando precisión y calidad.
+                <a className="video-article-more"> Leer más...</a>
+              </p>
+            </div>
+          </Link>
+
+          <Link href="#" className="article-video-link">
+            <div className="article-video">
+              <img
+                src={article_video1}
+                alt="imagen del artículo"
+                className="video-article-image"
+              ></img>
+
+              <p className="video-article-title">Título-Servicio 1</p>
+              <p className="video-article-desc">
+                Helping educators to understand and use AI in their classrooms
+                might be the key to determine wether they need it or not.
+              </p>
+              <p className="video-article-more">Leer más...</p>
+            </div>
+          </Link>
+
+          <Link href="#" className="article-video-link">
+            <div className="article-video">
+              <img
+                src={article_video1}
+                alt="imagen del artículo"
+                className="video-article-image"
+              ></img>
+
+              <p className="video-article-title">Título-Servicio 1</p>
+              <p className="video-article-desc">
+                Helping educators to understand and use AI in their classrooms
+              </p>
+              <p className="video-article-more">Leer más...</p>
+            </div>
+          </Link>
+
+          <Link href="#" className="article-video-link">
+            <div className="article-video">
+              <img
+                src={article_video1}
+                alt="imagen del artículo"
+                className="video-article-image"
+              ></img>
+
+              <p className="video-article-title">Título-Servicio 1</p>
+              <p className="video-article-desc">
+                Helping educators to understand and use AI in their classrooms
+              </p>
+              <p className="video-article-more">Leer más...</p>
+            </div>
+          </Link>
         </div>
       </div>
     </>
