@@ -6,6 +6,7 @@ import ModalPP from "./ModalPP";
 import NosotrosBody from "./NosotrosBody";
 import Servicios from "./Servicios";
 import VideoCeop from "./VideoCeop";
+import Article from "./ArticleSection/Article";
 import { motion } from "framer-motion";
 
 function Body() {
@@ -212,8 +213,9 @@ function Body() {
       </motion.div>
 
       <NosotrosBody />
-      <VideoCeop />
+      <Article />
       <Servicios />
+      <VideoCeop />
     </motion.div>
   );
 }

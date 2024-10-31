@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import YouTube from "react-youtube";
 import "./VideoCeop.css";
 
-import article_video1 from "./img-upscaling/article_video/article_video1.jpg";
-
 const calcularAnchoVideo = () => {
   const anchoVideo = window.innerWidth;
 
@@ -30,6 +28,7 @@ const calcularAltoVideo = () => {
 const addedMargin = 17.5;
 
 function VideoCeop() {
+
   const videoRef = useRef(null); // Referencia para el reproductor de video
   const containerRef = useRef(null); // Referencia para el contenedor del video
 
@@ -57,13 +56,11 @@ function VideoCeop() {
 
     // Crear un IntersectionObserver
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.9, // El 50% del video debe ser visible para disparar el evento
+      threshold: 0.9, // El 90% del video debe ser visible para disparar el evento
     });
-
     if (containerRef.current) {
       observer.observe(containerRef.current); // Observar el contenedor del video
     }
-
     // Limpieza: dejar de observar cuando el componente se desmonte
     return () => {
       if (containerRef.current) {
@@ -74,7 +71,6 @@ function VideoCeop() {
 
   const [newWidth, setNewWidth] = useState(calcularAnchoVideo()); // Estado para newWidth
   const [newHeight, setNewHeight] = useState(calcularAltoVideo()); // Estado para newHeight
-
   const [videoOptions, setVideoOptions] = useState({
     height: `${newHeight}px`,
     width: `${newWidth}px`,
@@ -90,7 +86,6 @@ function VideoCeop() {
     minHeight: `${newHeight + addedMargin}px`,
     minWidth: `${newWidth + addedMargin}px`,
   });
-
   const updateVideoDimensions = () => {
     if (videoRef.current) {
       const calcWidth = calcularAnchoVideo();
@@ -143,77 +138,6 @@ function VideoCeop() {
             opts={videoOptions}
             onReady={IsTheVideoReady}
           />
-        </div>
-
-        <div className="article-section">
-          <Link href="#" className="article-video-link">
-            <div className="article-video">
-              <img
-                src={article_video1}
-                alt="imagen del artículo"
-                className="video-article-image"
-              ></img>
-
-              <p className="video-article-title">
-                Elaboración de Tesis Académicas Usando IA
-              </p>
-              <p className="video-article-desc">
-                La inteligencia artificial transforma la investigación
-                académica, facilitando la búsqueda, análisis de datos y
-                estructuración de tesis, optimizando precisión y calidad.
-                <a className="video-article-more"> Leer más...</a>
-              </p>
-            </div>
-          </Link>
-
-          <Link href="#" className="article-video-link">
-            <div className="article-video">
-              <img
-                src={article_video1}
-                alt="imagen del artículo"
-                className="video-article-image"
-              ></img>
-
-              <p className="video-article-title">Título-Servicio 1</p>
-              <p className="video-article-desc">
-                Helping educators to understand and use AI in their classrooms
-                might be the key to determine wether they need it or not.
-              </p>
-              <p className="video-article-more">Leer más...</p>
-            </div>
-          </Link>
-
-          <Link href="#" className="article-video-link">
-            <div className="article-video">
-              <img
-                src={article_video1}
-                alt="imagen del artículo"
-                className="video-article-image"
-              ></img>
-
-              <p className="video-article-title">Título-Servicio 1</p>
-              <p className="video-article-desc">
-                Helping educators to understand and use AI in their classrooms
-              </p>
-              <p className="video-article-more">Leer más...</p>
-            </div>
-          </Link>
-
-          <Link href="#" className="article-video-link">
-            <div className="article-video">
-              <img
-                src={article_video1}
-                alt="imagen del artículo"
-                className="video-article-image"
-              ></img>
-
-              <p className="video-article-title">Título-Servicio 1</p>
-              <p className="video-article-desc">
-                Helping educators to understand and use AI in their classrooms
-              </p>
-              <p className="video-article-more">Leer más...</p>
-            </div>
-          </Link>
         </div>
       </div>
     </>

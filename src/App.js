@@ -7,7 +7,7 @@ import Body from "./Components/Body";
 function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []); // Solo se ejecuta al montarse el componente
+  }, []);
 
   return (
     <div>
@@ -15,7 +15,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Body />}/>
-          <Route path="/home" element={<Navigate to="/" />} /> {/* Redirige a /home */}
+          <Route path="/home" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </div>
