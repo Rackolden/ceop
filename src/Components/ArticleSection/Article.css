@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   gap: 1.25rem;
   justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 10px 10px;
   border: 1px solid black;
@@ -16,29 +17,31 @@
   color: black;
 }
 
+.cleared-article-section {
+  display: flex;
+  width: fit-content;
+  gap: inherit;
+}
+
 .article-video-link {
-  width: 325px;
-  max-width: 27.5vw;
-  min-width: 20vw;
-  height: fit-content;
   overflow: hidden;
   background-color: white;
   box-sizing: border-box;
   border: 0px solid gray;
   box-shadow: 0px 0px 2.5px 1px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.25s ease-in-out;
+  transition: box-shadow 0.35s ease-in-out;
+}
+
+.article-video-link.cleared {
+  width: 330px;
+  height: fit-content;
 }
 
 .article-video-link.hovered1 {
-  box-shadow: 0px 0px 7.5px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
 }
 
-.article-large {
-  width: 600px;
-  display: inline-flex;
-}
-
-.video-article-image-container:hover .video-article-image {
+.video-article-image:hover {
   transform: scale(1.03);
 }
 
@@ -46,12 +49,10 @@
   transform: scale(1.03);
 }
 
-.video-article-image-container {
+.video-article-image-container.cleared {
   width: 100%;
-  aspect-ratio: 1.8;
+  aspect-ratio: 1.618;
   overflow: hidden;
-  padding: 0;
-  margin: 0;
 }
 
 .video-article-image {
@@ -63,9 +64,37 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.video-article-text-container {
+.video-article-text-container.cleared {
   width: 100%;
-  padding: 15px;
+  padding: 12.5px;
+}
+
+.piled-article-section {
+  display: flex;
+  gap: inherit;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.article-video-link.article-large {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.video-article-image-container.piled-v {
+  height: 100%;
+  aspect-ratio: 1.6180339;
+  overflow: hidden;
+  flex-shrink: 1;
+}
+
+.video-article-text-container.piled-v {
+  flex: 1;
+  width: auto;
+  padding: 0px 12px;
+  align-items: center;
 }
 
 .video-article-title {
@@ -73,7 +102,7 @@
   width: fit-content;
   overflow: hidden;
   font-weight: 500;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   margin: 5px 0;
   transition: all 0.1s ease-in;
   letter-spacing: 0.25px;
@@ -93,12 +122,12 @@
   margin-top: 0.5rem;
   text-align: justify;
   background-color: transparent;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box; /* Flexibilidad para soportar múltiples líneas */
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   transition: color 0.5s ease;
 }

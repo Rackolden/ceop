@@ -16,6 +16,10 @@
   scrollbar-color: grey transparent; /* Color del 'thumb' y del área de fondo */
 }
 
+body {
+  overflow-x: hidden;
+}
+
 :root {
   --mainColor: #0083f6;
   --mainColorLight: #8dcaff;
