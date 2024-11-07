@@ -1,5 +1,4 @@
 import "./NosotrosBody.css";
-import Carrousel from "./Carrousel";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 
@@ -126,7 +125,6 @@ function NosotrosBody() {
           </motion.div>
         </div>
       </motion.div>
-      <Carrousel />
     </>
   );
 }

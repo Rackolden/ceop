@@ -142,7 +142,7 @@
   width: 100%;
   background-color: #00000039;
   backdrop-filter: blur(0.5px);
-  filter: saturate(1.5) contrast(1.1) brightness(1.1);
+  filter: saturate(1.25) contrast(1.1) brightness(1.1);
   opacity: 1;
   content: "";
   z-index: 0;
@@ -175,7 +175,7 @@
   width: 100%;
   background-color: #00000061;
   backdrop-filter: blur(0.5px);
-  filter: saturate(2.5) contrast(1.1) brightness(1.1);
+  filter: saturate(2) contrast(1.1) brightness(1.1);
   opacity: 1;
   content: "";
   z-index: 0;
@@ -204,7 +204,7 @@
   width: 100%;
   background-color: #0000005b;
   backdrop-filter: blur(0.5px);
-  filter: saturate(3) contrast(1.1) brightness(1.1);
+  filter: saturate(2) contrast(1.1) brightness(1.1);
   opacity: 1;
   content: "";
   z-index: 0;

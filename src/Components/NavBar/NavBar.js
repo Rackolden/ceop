@@ -53,7 +53,7 @@ function NavBar() {
           <Link
             to="InicioLink"
             smooth={true}
-            duration={800}
+            duration={700}
             className="nav-links"
             onClick={closeMenu}
           >
@@ -69,7 +69,7 @@ function NavBar() {
           <Link
             to="NosotrosLink"
             smooth={true}
-            duration={800}
+            duration={700}
             className="nav-links"
             onClick={closeMenu}
           >
@@ -85,7 +85,7 @@ function NavBar() {
           <Link
             to="ServiciosLink"
             smooth={true}
-            duration={800}
+            duration={700}
             className="nav-links"
             onClick={closeMenu}
           >
@@ -101,7 +101,7 @@ function NavBar() {
           <Link
             to="ContactoLink"
             smooth={true}
-            duration={800}
+            duration={700}
             className="nav-links"
             onClick={closeMenu}
           >

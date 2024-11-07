@@ -4,6 +4,7 @@ import "./Body.css";
 import ModalTS from "./ModalTS";
 import ModalPP from "./ModalPP";
 import NosotrosBody from "./NosotrosBody";
+import Carrousel from "./Swiper/Carrousel"
 import Servicios from "./Servicios";
 import VideoCeop from "./VideoCeop";
 import Article from "./ArticleSection/Article";
@@ -213,6 +214,7 @@ function Body() {
       </motion.div>
 
       <NosotrosBody />
+      <Carrousel />
       <Article />
       <Servicios />
       <VideoCeop />

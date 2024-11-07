@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import NavBar from "./Components/NavBar";
+import NavBar from "./Components/NavBar/NavBar";
 import Body from "./Components/Body";
 
 function App() {

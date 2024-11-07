@@ -3,18 +3,18 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, A11y, Mousewheel, Autoplay } from "swiper/modules";
 import "swiper/css/bundle";
-import carrousel1 from "./img-upscaling/carrousel/card-carrousel1.png";
-import carrousel2 from "./img-upscaling/carrousel/card-carrousel2.png";
-import carrousel3 from "./img-upscaling/carrousel/card-carrousel3.png";
-import carrousel4 from "./img-upscaling/carrousel/card-carrousel4.png";
-import carrousel5 from "./img-upscaling/carrousel/card-carrousel5.png";
-import carrousel6 from "./img-upscaling/carrousel/card-carrousel6.png";
-import carrousel7 from "./img-upscaling/carrousel/card-carrousel7.png";
-import carrousel8 from "./img-upscaling/carrousel/card-carrousel8.png";
-import carrousel9 from "./img-upscaling/carrousel/card-carrousel9.png";
-import carrousel10 from "./img-upscaling/carrousel/card-carrousel10.png";
-import carrousel11 from "./img-upscaling/carrousel/card-carrousel11.png";
-import carrousel12 from "./img-upscaling/carrousel/card-carrousel12.png";
+import carrousel1 from "../img-upscaling/carrousel/card-carrousel1.png";
+import carrousel2 from "../img-upscaling/carrousel/card-carrousel2.png";
+import carrousel3 from "../img-upscaling/carrousel/card-carrousel3.png";
+import carrousel4 from "../img-upscaling/carrousel/card-carrousel4.png";
+import carrousel5 from "../img-upscaling/carrousel/card-carrousel5.png";
+import carrousel6 from "../img-upscaling/carrousel/card-carrousel6.png";
+import carrousel7 from "../img-upscaling/carrousel/card-carrousel7.png";
+import carrousel8 from "../img-upscaling/carrousel/card-carrousel8.png";
+import carrousel9 from "../img-upscaling/carrousel/card-carrousel9.png";
+import carrousel10 from "../img-upscaling/carrousel/card-carrousel10.png";
+import carrousel11 from "../img-upscaling/carrousel/card-carrousel11.png";
+import carrousel12 from "../img-upscaling/carrousel/card-carrousel12.png";
 
 function Carrousel() {
   return (
