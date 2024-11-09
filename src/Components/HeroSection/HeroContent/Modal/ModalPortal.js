@@ -11,7 +11,7 @@ const ModalPortal = ({ children, isOpen, onRequestClose }) => {
       <div className="underlay" onClick={onRequestClose}></div>
       <div className="modal-content">{children}</div>
     </div>,
-    document.getElementById("modal-root") // Asegúrate de tener un div con este id en tu index.html
+    document.getElementById("modal-root")
   );
 };
 

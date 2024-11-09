@@ -508,7 +508,7 @@ const Article = () => {
             style={{
               position: "absolute",
               bottom: "5%",
-              left: "2%",
+              left: "10px",
               color: "white",
               zIndex: "1",
             }}
@@ -570,7 +570,7 @@ const Article = () => {
               style={{
                 position: "absolute",
                 bottom: "5%",
-                left: "2%",
+                left: "10px",
                 color: "white",
                 zIndex: "1",
               }}
@@ -621,7 +621,7 @@ const Article = () => {
               style={{
                 position: "absolute",
                 bottom: "5%",
-                left: "2%",
+                left: "10px",
                 color: "white",
                 zIndex: "1",
               }}

@@ -1,22 +1,20 @@
 import React from "react";
-import Modal from "react-modal";
 import "./Modal.css";
 import ModalPortal from "./ModalPortal";
 
 function ModalPP({ isOpen, onRequestClose }) {
   return (
     <ModalPortal
-      isOpen={isOpen} // Controla si el modal está abierto o no
+      isOpen={isOpen}
       onRequestClose={onRequestClose}
     >
-      {" "}
       <div className="elemento-modal-PP">
         <div className="texto-modal">
           <div className="título-modal-contenedor">
             <h2 className="título-modal">Política de Privacidad</h2>
           </div>
           <br></br>
-          <p className="date-modal">Última actualización: [02 / 10 / 2024]</p>{" "}
+          <p className="date-modal">Última actualización: [13 / 11 / 2024]</p>{" "}
           <br></br>
           <p>
             En CEOP Business, estamos comprometidos a proteger la privacidad de

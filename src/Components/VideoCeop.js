@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import YouTube from "react-youtube";
 import "./VideoCeop.css";
 
@@ -28,7 +27,6 @@ const calcularAltoVideo = () => {
 const addedMargin = 17.5;
 
 function VideoCeop() {
-
   const videoRef = useRef(null); // Referencia para el reproductor de video
   const containerRef = useRef(null); // Referencia para el contenedor del video
 
@@ -56,15 +54,20 @@ function VideoCeop() {
 
     // Crear un IntersectionObserver
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.9, // El 90% del video debe ser visible para disparar el evento
+      threshold: 0.9,
     });
-    if (containerRef.current) {
-      observer.observe(containerRef.current); // Observar el contenedor del video
+    // Copia de containerRef.current
+    const currentContainer = containerRef.current;
+
+    // Comenzar a observar el contenedor
+    if (currentContainer) {
+      observer.observe(currentContainer);
     }
+
     // Limpieza: dejar de observar cuando el componente se desmonte
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (currentContainer) {
+        observer.unobserve(currentContainer);
       }
     };
   }, []);
@@ -115,9 +118,9 @@ function VideoCeop() {
     handleResize(); // Inicializa al cargar
 
     return () => {
-      window.removeEventListener("resize", handleResize); // Limpia al desmontar
+      window.removeEventListener("resize", handleResize);
     };
-  }, [newWidth, newHeight]); //Se utiliza newWidth y NewHeight como dependencias porque son los valores del video size los que determinan el tamaño del box y otros elementos
+  }, [newWidth, newHeight]);
 
   return (
     <>

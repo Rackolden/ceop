@@ -1,4 +1,4 @@
-import "./NosotrosBody.css";
+import "./NosotrosBody.css";  
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 

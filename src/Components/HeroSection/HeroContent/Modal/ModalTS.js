@@ -11,7 +11,7 @@ function ModalTS({ isOpen, onRequestClose }) {
       <div className="elemento-modal">
         <div className="texto-modal">
           <h2 className="título-modal">Términos de Servicio</h2>
-          <p className="date-modal">Última actualización: [02 / 10 / 2024]</p>
+          <p className="date-modal">Última actualización: [13 / 11 / 2024]</p>
           <br />
           <p>
             Estos Términos de Servicio rigen el uso de los servicios ofrecidos

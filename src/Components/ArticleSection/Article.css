@@ -145,6 +145,6 @@
 }
 
 .article-video-link.single.half::after {
-  height: 50%;
+  height: 40%;
   background: linear-gradient(to bottom, transparent 0%, black 70%);
 }

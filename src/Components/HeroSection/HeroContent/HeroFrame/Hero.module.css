@@ -1,0 +1,29 @@
+.hero * {
+  user-select: none;
+  outline: none;
+}
+
+.hero {
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: fit-content;
+  min-height: 100vh;
+  background-image: url("../../../img-upscaling/herobg.png");
+  background-position: center;
+  background-size: cover;
+  filter: contrast(1.05) saturate(1.25) brightness(1.25) sepia(0.125)
+    hue-rotate(15deg) blur(0.125px) grayscale(2.5%);
+}
+
+.hero::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 72, 255, 0.0125);
+}
