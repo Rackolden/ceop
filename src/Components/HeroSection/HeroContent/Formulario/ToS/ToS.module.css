@@ -1,0 +1,66 @@
+.ts-section {
+  display: flex;
+  align-items: center;
+}
+
+.ts-checkbox {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  color: transparent;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.ts-checkbox:hover {
+  background-color: rgb(180, 180, 180);
+}
+
+.ts-checkbox::after {
+  font-family: "Font Awesome 6 Free";
+  font: var(--fa-font-solid);
+  font-size: 0.65rem;
+  content: "\f00c";
+  transition: all 0.5s ease;
+}
+
+.ts-checkbox:checked {
+  background-color: rgb(30, 30, 30);
+  color: white;
+  transition: all 0.4s ease;
+}
+
+.modal-link {
+    position: relative;
+    color:rgb(0, 0, 0);
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s linear;
+    padding: 2.5px 0;
+}
+
+.modal-link:hover {
+    color: white;
+}
+
+.modal-link:hover::before {
+    width: 90%;
+    left: 5%;
+}
+
+.modal-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    height: 2.5px;
+    width: 0px;
+    border-radius: 5px;
+    background-color: white;
+    transition: all 0.4s linear;
+}

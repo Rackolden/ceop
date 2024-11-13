@@ -20,12 +20,6 @@ body {
   overflow-x: hidden;
 }
 
-:root {
-  --mainColor: #0083f6;
-  --mainColorLight: #8dcaff;
-  --secondaryColor: #fff;
-  --textColor: #eee;
-}
 /* Para navegadores basados en WebKit (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
   width: 8px; /* Ancho de la barra de desplazamiento */

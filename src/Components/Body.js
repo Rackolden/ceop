@@ -1,5 +1,5 @@
 // Components/Body.js
-import React, { useState } from "react";
+import React from "react";
 import "./Body.css";
 import Hero from "./HeroSection/HeroContent/HeroFrame/Hero"
 import NosotrosBody from "./NosotrosBody";
