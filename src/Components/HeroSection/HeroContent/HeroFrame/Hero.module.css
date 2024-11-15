@@ -9,10 +9,12 @@
   position: relative;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 100px;
   width: 100vw;
   height: fit-content;
   min-height: 100vh;
+  padding: 100px 0;
   background-image: url("../../../img-upscaling/herobg.webp");
   background-position: center;
   background-size: cover;
@@ -30,7 +32,7 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-@media all and (max-width:720px) {
+@media all and (max-width:720px) and (orientation: portrait) {
   .hero {
     flex-flow: column;
   }

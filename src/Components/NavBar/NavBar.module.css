@@ -1,142 +1,74 @@
 .navbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  height: 7vh;
-  width: 100vw;
-  padding: 0rem;
-  color: var(--textColor);
-  align-items: center;
-  z-index: 999;
   position: fixed;
+  height: 50px;
+  width: 100%;
+  padding: 0 4px;
   background-color: rgb(16, 171, 255);
+  z-index: 5;
 }
 
-.navbar-title {
+.title-section {
   display: flex;
-  background-color: transparent;
-  text-decoration: none;
   align-items: center;
-  color: black;
-  padding-left: 8px;
-  overflow: hidden;
-  transition: color 0.3s ease-in 0ms;
-  outline: none;
+  gap: 14px;
   cursor: pointer;
+  transition: color 0.7s;
 }
 
-.ceop-title,
-.business-title,
-.fa-graduation-cap {
-  outline: none;
-}
-
-.ceop-title {
-  background-color: transparent;
-  font-weight: 400;
-  font-size: 2.5vw;
-  font-size: clamp(30px,2.5vw,37.5px);
-  font-weight: 500;
-  user-select: none;
-}
-
-.business-title {
-  background-color: transparent;
-  font-size: 2.3vw;
-  font-size: clamp(26.25px,2.3vw,30px);
-  user-select: none;
-}
-
-.fa-graduation-cap {
-  background-color: transparent;
-  font-size: 2.4vw;
-  font-size: clamp(28px,2.4vw,38.5px);
-  overflow-y: hidden;
-  user-select: none;
-}
-
-.icon-menu {
-  background-color: transparent;
-  overflow: hidden;
-  font-size: clamp(15px, 1.075vw, 20px);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 0px;
-  transition: font-size 0.3s ease 0s;
-}
-
-.navbar-title:hover {
+.title-section:hover {
   color: white;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 2.25rem;
+}
+
+.cap {
+  font-size: 2.25rem;
 }
 
 .fa-bars,
 .fa-x {
-  background-color: transparent;
-  overflow-y: hidden;
-  padding: 0;
-  margin: 0;
-  font-size: 37.5px;
+  font-size: 2.25rem;
 }
 
-.nav-item-container {
-  background-color: transparent;
+.menu-container {
   display: flex;
-  z-index: 10;
   align-items: center;
+  gap: 1.5rem;
 }
 
-.nav-item {
-  list-style-type: none;
-  background-color: transparent;
-  font-size: clamp(15px, 1.075vw, 20px);
-  margin-right: 2vw;
-  overflow: hidden;
+.nav-link {
   display: flex;
-  height: 35px;
   align-items: center;
   position: relative;
-  user-select: none;
-  cursor:pointer;
-  transition: font-size 0.3s ease 0s;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.5s, font-size 0.2s;
 }
 
-.nav-links {
-  text-decoration: none;
-  background-color: transparent;
-  color: rgb(27, 27, 27);
-  position: relative;
-  transition: color 0.5s ease 0.1s;
-  overflow-x: hidden;
-  display: flex;
-  align-items: center;
-  outline: none;
-}
-
-.nav-item::after {
-  content: "";
-  position: absolute;
-  bottom: 3px;
-  left: 2.5%;
-  width: 0%;
-  height: 3.5px;
-  background-color: rgba(233, 233, 233, 0.832);
-  transition: width 0.5s ease;
-}
-
-.nav-item:hover::after {
-  width: 95%;
-}
-
-.nav-item:hover .nav-links {
+.nav-link:hover, .nav-link:hover .icon-menu {
+  font-size: 1.1rem;
   color: white;
 }
 
-.nav-item:hover,
-.icon-menu:hover .icon-menu {
-  font-size: 1.15vw;
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 3px;
+  background-color: rgba(233, 233, 233, 0.832);
+  transition: width 0.5s;
 }
 
-.nav-recursos {
-  margin-right: 1.5vw;
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .nav-btn {

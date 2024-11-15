@@ -1,8 +1,8 @@
 .text-container {
   display: flex;
   align-items: center;
-  width: 70vw;
-  aspect-ratio: 1.7;
+  width: 614px;
+  aspect-ratio: 1.618;
   padding: 1rem;
   border-radius: 1rem;
   background-color: rgba(0, 0, 0, 0.4);
@@ -29,29 +29,13 @@
   -webkit-box-orient: vertical;
 }
 
-@media all and (orientation: landscape) {
-  .text-container {
-    width: min(
-      40vw,
-      720px
-    ); /* El contenedor crecerá junto con el ancho de la pantalla hasta alcanzar 720px como máximo */
-    /* width: max(45vw, 720px);  El contenedor se reducirá junto con el ancho de la pantalla hasta alcanzar 720px como mínimo */
-  }
-}
-
 @media all and (orientation: portrait), (max-width: 720px) {
   .text-container {
-    width: 65vw;
+    width: 95vw;
     aspect-ratio: 2;
   }
 
   .form-text {
     text-align: center;
-  }
-}
-
-@media all and (max-width:500px) {
-  .text-container {
-    width: 80vw;
   }
 }

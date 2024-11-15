@@ -4,7 +4,7 @@
   gap: 15px;
   width: 614px;
   padding: 1.5rem;
-  background-color: rgba(13, 151, 225, 0.8);
+  background-color: rgba(33, 166, 238, 0.8);
   border: 1px solid black;
   border-radius: 1rem;
   backdrop-filter: blur(10px);
@@ -50,6 +50,6 @@
 
 @media all and (max-width: 720px), (orientation: portrait) {
   .formulario {
-    width: 90vw;
+    width: 95vw;
   }
 }

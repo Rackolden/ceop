@@ -14,14 +14,17 @@ function ToS() {
   return (
     <div className={styles["ts-section"]}>
       <input type="checkbox" required className={styles["ts-checkbox"]} />
-      &nbsp;&thinsp;Acepto los&nbsp;
-      <span className={styles["modal-link"]} onClick={openModalTS}>
-        Términos de Servicio
+      <span className={styles["ts-text"]}>
+        &nbsp;&thinsp;Acepto los&nbsp;
+        <span className={styles["modal-link"]} onClick={openModalTS}>
+          Términos de Servicio
+        </span>
+        &nbsp;y&nbsp;
+        <span className={styles["modal-link"]} onClick={openModalPP}>
+          Políticas de Privacidad
+        </span>
       </span>
-      &nbsp;y&nbsp;
-      <span className={styles["modal-link"]} onClick={openModalPP}>
-        Políticas de Privacidad
-      </span>
+
       <ModalTS isOpen={isOpenTS} onRequestClose={closeModalTS} />
       <ModalPP isOpen={isOpenPP} onRequestClose={closeModalPP} />
     </div>

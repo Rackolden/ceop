@@ -1,12 +1,58 @@
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    gap: 10%;
-    width: 25%;
-    aspect-ratio: 3.25;
-    border: 1px solid black;
-    border-radius: 1rem;
-    font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  position: relative;
+  width: 30%;
+  height: fit-content;
+  padding: 15px 0;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.7s linear;
+}
+
+.button:hover, .button:hover .icon-submit {
+  color: black;
+}
+
+.button::before {
+  position: absolute;
+  content: "";
+  background: linear-gradient(45deg, #ffffff 20%, rgb(200, 200, 200) 80%);
+  inset: 0;
+  z-index: -1;
+}
+
+.button:hover::before {
+  background: linear-gradient(45deg, rgb(200, 200, 200) 20%, rgb(255, 255, 255) 80%);
+}
+
+.button::after {
+  position: absolute;
+  content: "";
+  background-color: black;
+  inset: 3px;
+  border-radius: 14px;
+  transition: inset 0.3s ease, opacity 0.4s linear;
+  z-index: -1;
+}
+
+.button:hover::after {
+  inset: 0;
+  opacity: 0;
+}
+
+.icon-submit {
+  color: white;
+}
+
+@media all and (max-width:720px) and (orientation: portrait) {
+  .button {
+    width: 40%;
+  }
 }
