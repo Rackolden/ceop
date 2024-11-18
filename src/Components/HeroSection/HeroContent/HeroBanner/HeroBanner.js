@@ -12,7 +12,7 @@ function HeroBanner() {
         transition={{ duration: 1 }}
       >
         <p className={styles["form-text"]}>
-          Es momento de dar el siguiente paso. ¡Inicia tu tésis hoy con CEOP
+          Es momento de dar el siguiente paso.<br />¡Inicia tu tésis hoy con CEOP
           Business!
         </p>
       </motion.div>

@@ -1,22 +1,22 @@
-import "./Carrousel.css";
+import styles from "./SwiperEmp.module.css";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, A11y, Mousewheel, Autoplay } from "swiper/modules";
 import "swiper/css/bundle";
-import carrousel1 from "../img-upscaling/carrousel/card-carrousel1.png";
-import carrousel2 from "../img-upscaling/carrousel/card-carrousel2.png";
-import carrousel3 from "../img-upscaling/carrousel/card-carrousel3.png";
-import carrousel4 from "../img-upscaling/carrousel/card-carrousel4.png";
-import carrousel5 from "../img-upscaling/carrousel/card-carrousel5.png";
-import carrousel6 from "../img-upscaling/carrousel/card-carrousel6.png";
-import carrousel7 from "../img-upscaling/carrousel/card-carrousel7.png";
-import carrousel8 from "../img-upscaling/carrousel/card-carrousel8.png";
-import carrousel9 from "../img-upscaling/carrousel/card-carrousel9.png";
-import carrousel10 from "../img-upscaling/carrousel/card-carrousel10.png";
-import carrousel11 from "../img-upscaling/carrousel/card-carrousel11.png";
-import carrousel12 from "../img-upscaling/carrousel/card-carrousel12.png";
+import swiper1 from "../../Images/swiper/swiper1.png";
+import swiper2 from "../../Images/swiper/swiper2.png";
+import swiper3 from "../../Images/swiper/swiper3.png";
+import swiper4 from "../../Images/swiper/swiper4.png";
+import swiper5 from "../../Images/swiper/swiper5.png";
+import swiper6 from "../../Images/swiper/swiper6.png";
+import swiper7 from "../../Images/swiper/swiper7.png";
+import swiper8 from "../../Images/swiper/swiper8.png";
+import swiper9 from "../../Images/swiper/swiper9.png";
+import swiper10 from "../../Images/swiper/swiper10.png";
+import swiper11 from "../../Images/swiper/swiper11.png";
+import swiper12 from "../../Images/swiper/swiper12.png";
 
-function Carrousel() {
+function SwiperEmp() {
   return (
     <div>
       <div className="carousel-title-meet-us-container">
@@ -62,14 +62,6 @@ function Carrousel() {
               spaceBetween: 5,
             },
             1000: {
-              slidesPerView: 2.25,
-              spaceBetween: 10,
-            },
-            1200: {
-              slidesPerView: 2.75,
-              spaceBetween: 10,
-            },
-            1000: {
               slidesPerView: 3.25,
               spaceBetween: 15,
             },
@@ -86,7 +78,7 @@ function Carrousel() {
         >
           <SwiperSlide className="card1">
             <img
-              src={carrousel1}
+              src={swiper1}
               alt="Empleado(1)"
               className="card-image"
             ></img>
@@ -103,7 +95,7 @@ function Carrousel() {
           </SwiperSlide>
           <SwiperSlide className="card2">
             <img
-              src={carrousel2}
+              src={swiper2}
               alt="Empleado(2)"
               className="card-image"
             ></img>
@@ -120,7 +112,7 @@ function Carrousel() {
           </SwiperSlide>
           <SwiperSlide className="card3">
             <img
-              src={carrousel3}
+              src={swiper3}
               alt="Empleado(3)"
               className="card-image"
             ></img>
@@ -137,7 +129,7 @@ function Carrousel() {
           </SwiperSlide>
           <SwiperSlide className="card4">
             <img
-              src={carrousel4}
+              src={swiper4}
               alt="Empleado(4)"
               className="card-image"
             ></img>
@@ -154,7 +146,7 @@ function Carrousel() {
           </SwiperSlide>
           <SwiperSlide className="card5">
             <img
-              src={carrousel5}
+              src={swiper5}
               alt="Empleado(5)"
               className="card-image"
             ></img>
@@ -171,7 +163,7 @@ function Carrousel() {
           </SwiperSlide>
           <SwiperSlide className="card6">
             <img
-              src={carrousel6}
+              src={swiper6}
               alt="Empleado(6)"
               className="card-image"
             ></img>
@@ -188,7 +180,7 @@ function Carrousel() {
           </SwiperSlide>
           <SwiperSlide className="card7">
             <img
-              src={carrousel7}
+              src={swiper7}
               alt="Empleado(7)"
               className="card-image"
             ></img>
@@ -205,7 +197,7 @@ function Carrousel() {
           </SwiperSlide>
           <SwiperSlide className="card8">
             <img
-              src={carrousel8}
+              src={swiper8}
               alt="Empleado(8)"
               className="card-image"
             ></img>
@@ -222,7 +214,7 @@ function Carrousel() {
           </SwiperSlide>
           <SwiperSlide className="card9">
             <img
-              src={carrousel9}
+              src={swiper9}
               alt="Empleado(9)"
               className="card-image"
             ></img>
@@ -239,7 +231,7 @@ function Carrousel() {
           </SwiperSlide>
           <SwiperSlide className="card10">
             <img
-              src={carrousel10}
+              src={swiper10}
               alt="Empleado(10)"
               className="card-image"
             ></img>
@@ -256,7 +248,7 @@ function Carrousel() {
           </SwiperSlide>
           <SwiperSlide className="card11">
             <img
-              src={carrousel11}
+              src={swiper11}
               alt="Empleado(11)"
               className="card-image"
             ></img>
@@ -273,7 +265,7 @@ function Carrousel() {
           </SwiperSlide>
           <SwiperSlide className="card12">
             <img
-              src={carrousel12}
+              src={swiper12}
               alt="Empleado(12)"
               className="card-image"
             ></img>
@@ -294,4 +286,4 @@ function Carrousel() {
   );
 }
 
-export default Carrousel;
+export default SwiperEmp;

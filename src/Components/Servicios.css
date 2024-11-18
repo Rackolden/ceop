@@ -34,23 +34,23 @@
 }
 
 .service1 {
-  background-image: url(./img-upscaling/services/service1.png);
+  background-image: url("./Images/services/service1.png");
 }
 
 .service2 {
-  background-image: url(./img-upscaling/services/service2.png);
+  background-image: url("./Images/services/service2.png");
 }
 
 .service3 {
-  background-image: url(./img-upscaling/services/service3.png);
+  background-image: url("./Images/services/service3.png");
 }
 
 .service4 {
-  background-image: url(./img-upscaling/services/service4.png);
+  background-image: url("./Images/services/service4.png");
 }
 
 .service5 {
-  background-image: url(./img-upscaling/services/service5.png);
+  background-image: url("./Images/services/service5.png");
 }
 
 .service-slider-content-container {

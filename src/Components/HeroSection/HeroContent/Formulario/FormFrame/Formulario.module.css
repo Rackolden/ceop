@@ -1,8 +1,8 @@
 .formulario {
   display: flex;
   flex-flow: column wrap;
-  gap: 15px;
-  width: 614px;
+  gap: 16px;
+  width: 590px;
   padding: 1.5rem;
   background-color: rgba(33, 166, 238, 0.8);
   border: 1px solid black;
@@ -24,7 +24,13 @@
 .input-box {
   display: flex;
   flex-flow: column wrap;
-  gap: 7.5px;
+  flex: 1;
+  gap: 12px;
+}
+
+.input-wrap {
+  display: flex;
+  gap: inherit;
 }
 
 .input {
@@ -33,7 +39,7 @@
   border-radius: 20px;
   background-color: rgba(212, 212, 212, 0.8);
   height: 45px;
-  padding-left: 7.5px;
+  padding-left: 12px;
 }
 
 .input::placeholder {

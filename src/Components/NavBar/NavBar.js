@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 import styles from "./NavBar.module.css";
 import { motion } from "framer-motion";
@@ -14,21 +14,6 @@ function NavBar() {
     setMenuOpen(false);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      const menu = document.querySelector(".nav-item-container");
-      if (menu && menu.contains(event.target) === false) {
-        closeMenu(); // Cierra el menú si el clic está fuera
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside); // Agrega el eventListener
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside); // Limpia el eventListener al desmontar
-    };
-  }, []); // Ejecuta el efecto solo una vez al montar el componente
-
   return (
     <motion.div
       className={styles.navbar}
@@ -42,9 +27,8 @@ function NavBar() {
       </Link>
 
       {/* Clase dinámica basada en el estado del menú */}
-      <ul className={`${styles["menu-container"]} ${menuOpen ? "responsive_ul" : ""}`}>
+      <ul className={`${styles["menu-container"]} ${menuOpen ? styles["menu-close"] : ""}`}>
         <motion.div
-          className={styles["nav-item"]}
           initial={{ opacity: 0, x: -150 }} // Desplazamiento inicial
           animate={{ opacity: 1, x: 0 }} // Posición final
           transition={{ duration: 1.1 }}
@@ -56,11 +40,11 @@ function NavBar() {
             className={styles["nav-link"]}
             onClick={closeMenu}
           >
-            <i className={`fa-solid fa-house ${styles["icon-menu"]}`}>&nbsp;</i>INICIO
+            <i className={`fa-solid fa-house ${styles["icon-menu"]}`}>&nbsp;</i>
+            INICIO
           </Link>
         </motion.div>
         <motion.div
-          className={styles["nav-item"]}
           initial={{ opacity: 0, x: -150 }} // Desplazamiento inicial
           animate={{ opacity: 1, x: 0 }} // Posición final
           transition={{ duration: 1, delay: 0.35 }}
@@ -72,11 +56,11 @@ function NavBar() {
             className={styles["nav-link"]}
             onClick={closeMenu}
           >
-            <i className={`fa-solid fa-users ${styles["icon-menu"]}`}>&nbsp;</i>NOSOTROS
+            <i className={`fa-solid fa-users ${styles["icon-menu"]}`}>&nbsp;</i>
+            NOSOTROS
           </Link>
         </motion.div>
         <motion.div
-          className={styles["nav-item"]}
           initial={{ opacity: 0, x: -150 }} // Desplazamiento inicial
           animate={{ opacity: 1, x: 0 }} // Posición final
           transition={{ duration: 0.6, delay: 0.9 }}
@@ -88,11 +72,13 @@ function NavBar() {
             className={styles["nav-link"]}
             onClick={closeMenu}
           >
-            <i className={`fa-solid fa-briefcase ${styles["icon-menu"]}`}>&nbsp;</i>SERVICIOS
+            <i className={`fa-solid fa-briefcase ${styles["icon-menu"]}`}>
+              &nbsp;
+            </i>
+            SERVICIOS
           </Link>
         </motion.div>
         <motion.div
-          className={styles["nav-item"]}
           initial={{ opacity: 0, x: -150 }} // Desplazamiento inicial
           animate={{ opacity: 1, x: 0 }} // Posición final
           transition={{ duration: 0.8, delay: 1.3 }}
@@ -104,11 +90,13 @@ function NavBar() {
             className={styles["nav-link"]}
             onClick={closeMenu}
           >
-            <i className={`fa-solid fa-address-book ${styles["icon-menu"]}`}>&nbsp;</i>CONTACTO
+            <i className={`fa-solid fa-address-book ${styles["icon-menu"]}`}>
+              &nbsp;
+            </i>
+            CONTACTO
           </Link>
         </motion.div>
         <motion.div
-          className={styles["nav-item"]}
           initial={{ opacity: 0, x: -150 }} // Desplazamiento inicial
           animate={{ opacity: 1, x: 0 }} // Posición final
           transition={{ duration: 1.15, delay: 1.6 }}
@@ -120,15 +108,14 @@ function NavBar() {
             rel="noopener noreferrer"
             onClick={closeMenu}
           >
-            <i className={`fa-solid fa-books ${styles["icon-menu"]}`}>&nbsp;</i>RECURSOS
+            <i className={`fa-solid fa-books ${styles["icon-menu"]}`}>&nbsp;</i>
+            RECURSOS
           </a>
         </motion.div>
-        
       </ul>
 
-      {/* Botón para mostrar/ocultar el menú */}
       <button
-        className="nav-btn nav-close-btn"
+        className={styles.button}
         onClick={toggleMenu}
         aria-expanded={menuOpen}
       >

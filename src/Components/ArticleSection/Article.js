@@ -1,13 +1,14 @@
 import "./Article.css";
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import article_video1 from "../img-upscaling/article_video/article_video1.webp";
-import article_video2 from "../img-upscaling/article_video/article_video2.webp";
-import article_video3 from "../img-upscaling/article_video/article_video3.webp";
-import article_video4 from "../img-upscaling/article_video/article_video4.webp";
-import article_video5 from "../img-upscaling/article_video/article_video5.webp";
-import article_video6 from "../img-upscaling/article_video/article_video6.webp";
-import article_video7 from "../img-upscaling/nosotros-cards/card-cover2.png";
+import article1 from "../Images/article/article1.webp";
+import article2 from "../Images/article/article2.webp";
+import article3 from "../Images/article/article3.webp";
+import article4 from "../Images/article/article4.webp";
+import article5 from "../Images/article/article5.webp";
+import article6 from "../Images/article/article6.webp";
+import article7 from "../Images/article/article7.webp";
+import article8 from "../Images/article/article8.webp";
 
 const Article = () => {
   const [hoverStates, setHoverStates] = useState({
@@ -70,7 +71,7 @@ const Article = () => {
     return () => {
       window.removeEventListener("resize", handleResize); // Limpia al desmontar
     };
-  }, []);
+  });
 
   return (
     <>
@@ -86,7 +87,7 @@ const Article = () => {
             <div className="video-article-image-container cleared">
               <Link href="#">
                 <img
-                  src={article_video1}
+                  src={article1}
                   alt="imagen del artículo"
                   onMouseEnter={() => {
                     handleMouseEnter("stateArticle1");
@@ -132,7 +133,7 @@ const Article = () => {
             <div className="video-article-image-container cleared">
               <Link href="#">
                 <img
-                  src={article_video2}
+                  src={article2}
                   alt="imagen del artículo"
                   onMouseEnter={() => {
                     handleMouseEnter("stateArticle2");
@@ -190,7 +191,7 @@ const Article = () => {
             <div className="video-article-image-container piled-v">
               <Link href="#">
                 <img
-                  src={article_video3}
+                  src={article3}
                   alt="imagen del artículo"
                   onMouseEnter={() => {
                     handleMouseEnter("stateArticle3");
@@ -237,7 +238,7 @@ const Article = () => {
             <div className="video-article-image-container piled-v">
               <Link href="#">
                 <img
-                  src={article_video7}
+                  src={article4}
                   alt="imagen del artículo"
                   onMouseEnter={() => {
                     handleMouseEnter("stateArticle4");
@@ -286,7 +287,7 @@ const Article = () => {
             <div className="video-article-image-container cleared">
               <Link href="#">
                 <img
-                  src={article_video1}
+                  src={article5}
                   alt="imagen del artículo"
                   onMouseEnter={() => {
                     handleMouseEnter("stateArticle5");
@@ -332,7 +333,7 @@ const Article = () => {
             <div className="video-article-image-container cleared">
               <Link href="#">
                 <img
-                  src={article_video2}
+                  src={article6}
                   alt="imagen del artículo"
                   onMouseEnter={() => {
                     handleMouseEnter("stateArticle6");
@@ -390,7 +391,7 @@ const Article = () => {
             <div className="video-article-image-container piled-v">
               <Link href="#">
                 <img
-                  src={article_video3}
+                  src={article7}
                   alt="imagen del artículo"
                   onMouseEnter={() => {
                     handleMouseEnter("stateArticle7");
@@ -437,7 +438,7 @@ const Article = () => {
             <div className="video-article-image-container piled-v">
               <Link href="#">
                 <img
-                  src={article_video4}
+                  src={article8}
                   alt="imagen del artículo"
                   onMouseEnter={() => {
                     handleMouseEnter("stateArticle8");
@@ -492,7 +493,7 @@ const Article = () => {
           <Link href="#">
             <img
               alt="imagen del artículo"
-              src={article_video4}
+              src={article4}
               onMouseEnter={() => {
                 handleMouseEnter("stateArticle9");
               }}
@@ -542,7 +543,6 @@ const Article = () => {
             maxWidth: divDimensions.width,
           }}
         >
-          
           <div
             className={`article-video-link single half ${
               hoverStates.stateArticle10 ? "hovered1" : ""
@@ -554,7 +554,7 @@ const Article = () => {
             <Link href="#">
               <img
                 alt="imagen del artículo"
-                src={article_video5}
+                src={article5}
                 onMouseEnter={() => {
                   handleMouseEnter("stateArticle10");
                 }}
@@ -605,7 +605,7 @@ const Article = () => {
             <Link href="#">
               <img
                 alt="imagen del artículo"
-                src={article_video6}
+                src={article6}
                 onMouseEnter={() => {
                   handleMouseEnter("stateArticle11");
                 }}
@@ -644,9 +644,7 @@ const Article = () => {
               </Link>
             </div>
           </div>
-
         </div>
-
       </div>
     </>
   );

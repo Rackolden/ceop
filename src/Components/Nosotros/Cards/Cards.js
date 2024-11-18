@@ -1,8 +1,8 @@
-import "./NosotrosBody.css";  
+import styles from "./Cards.module.css";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 
-function NosotrosBody() {
+function Cards() {
   const [hovered, setHovered] = useState(false);
   const [hoveredGappy1, setHoveredGappy1] = useState(false);
   const [hoveredGappy2, setHoveredGappy2] = useState(false);
@@ -129,4 +129,4 @@ function NosotrosBody() {
   );
 }
 
-export default NosotrosBody;
+export default Cards;

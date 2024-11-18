@@ -79,48 +79,72 @@ function Formulario() {
         />
       </div>
 
-      <div className={styles["input-box"]}>
-        <label htmlFor="email" className={styles["label-text"]}>
-          <i
-            className={`fa-solid fa-circle-envelope ${styles["label-icon"]}`}
-          ></i>
-          Correo Electrónico:
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email" // El entry correspondiente está asignado a este campo
-          value={formData.email}
-          onChange={handleChange}
-          autoCapitalize="none"
-          autoComplete="on"
-          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-          title="Ingrese una dirección de correo válida"
-          required
-          placeholder="name@domain.com"
-          tabIndex="2"
-          className={styles["input"]}
-        />
+      <div className={styles["input-wrap"]}>
+        <div className={styles["input-box"]}>
+          <label htmlFor="email" className={styles["label-text"]}>
+            <i
+              className={`fa-solid fa-circle-envelope ${styles["label-icon"]}`}
+            ></i>
+            Correo Electrónico:
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email" // El entry correspondiente está asignado a este campo
+            value={formData.email}
+            onChange={handleChange}
+            autoCapitalize="none"
+            autoComplete="on"
+            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            title="Ingrese una dirección de correo válida"
+            required
+            placeholder="name@domain.com"
+            tabIndex="2"
+            className={styles["input"]}
+          />
+        </div>
+
+        <div className={styles["input-box"]}>
+          <label htmlFor="phone" className={styles["label-text"]}>
+            <i
+              className={`fa-solid fa-circle-phone ${styles["label-icon"]}`}
+            ></i>
+            Número de Celular:
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            pattern="^9\d{8}$"
+            title="El número ingresado es incorrecto"
+            required
+            placeholder="+51"
+            tabIndex="3"
+            className={styles["input"]}
+          />
+        </div>
       </div>
 
       <div className={styles["input-box"]}>
-        <label htmlFor="phone" className={styles["label-text"]}>
-          <i className={`fa-solid fa-circle-phone ${styles["label-icon"]}`}></i>
-          Número de Celular:
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          pattern="^9\d{8}$"
-          title="El número ingresado es incorrecto"
-          required
-          placeholder="+51"
-          tabIndex="3"
-          className={styles["input"]}
-        />
+        <label htmlFor="dropdown">Selecciona una opción:</label>
+        <select className={styles.input} id="dropdown">
+          <option value="">--Selecciona una opción--</option>
+          <option value="opcion1">Servicio de Parafraseo</option>
+          <option value="opcion2">Asesoría y Elaboración de Tesis</option>
+          <option value="opcion3">Reporte de Turnitin</option>
+          <option value="opcion4">Elaboración de Plan de Tesis</option>
+          <option value="opcion2">Elaboración de Informe de Tesis</option>
+          <option value="opcion3">Elaboración de Instrumento de Investigación</option>
+          <option value="opcion1">Revisión del Plan de Tesis</option>
+          <option value="opcion2">Revisión de Informe de Tesis</option>
+          <option value="opcion3">Levantamiento de Observaciones</option>
+          <option value="opcion3">Procesamiento y Análisis de Datos</option>
+          <option value="opcion1">Entrenamiento para Sustentación</option>
+          <option value="opcion2">Clases de Metodología</option>
+          <option value="opcion3">Clases de Estadística</option>
+        </select>
       </div>
 
       <div className={styles["input-box"]}>
