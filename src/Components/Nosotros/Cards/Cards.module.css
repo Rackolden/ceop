@@ -1,119 +1,64 @@
-.nosotros-section {
-  user-select: none;
-  overflow: hidden;
-  background-color: transparent;
+.container {
   position: relative;
-  box-sizing: border-box;
 }
 
-.nosotros-section::before {
+.container::before {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../../Images/nosotros-cards/background.png");
-  background-size: auto;
-  background-position: bottom right;
-  background-repeat: no-repeat;
+  inset: 0;
+  background: url("../../Images/nosotros-cards/background.png") bottom right /
+    auto no-repeat;
   transform: rotate(4deg);
   opacity: 0.4;
-  z-index: 0;
-  transition: all 0.5s ease 0s;
+  transition: opacity 0.5s;
+  z-index: -1;
 }
 
-.nosotros-section.hovered::before {
+.container.hovered::before {
   opacity: 0.8;
 }
 
-.nosotros-title-container {
-  height: 20vh;
+.title {
+  height: 4.5rem;
+  background-color: rgba(255, 0, 0, 10%);
+  align-content: center;
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+
+.cards-section {
   display: flex;
-  width: auto;
-  overflow: hidden;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  padding: 32px 0;
+  gap: 32px;
+  background-color: rgba(0, 0, 255, 10%);
 }
 
-.nosotros-title-lato {
+.card {
+  height: 290px;
+  aspect-ratio: 1.618;
   text-align: center;
-  justify-self: center;
-  font-weight: 600;
-  font-size: 3.3vmax;
-  font-family: "Lato", sans-serif;
-  background-color: transparent;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  width: auto;
-  overflow: hidden;
+  align-content: center;
+  border: 1px solid black;
+  border-radius: 16px;
   cursor: pointer;
-  padding-bottom: 3px;
-  padding-right: 20px;
-  padding-left: 20px;
+  transition: height 0.5s;
 }
 
-.nosotros-title-lato::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  left: calc((100% - 35%) / 2);
-  width: 35%;
-  height: 3px;
-  background-color: #2d2d2d;
-  border-radius: 20px;
-  transition: all 0.5s ease;
+.card:hover {
+  height: 300px;
 }
 
-.nosotros-title-lato:hover::before {
-  width: 100%;
-  left: calc((100% - 100%) / 2);
-}
 
-.nosotros-title-lato.hovered::before {
-  width: 65%;
-  left: calc((100% - 65%) / 2);
-  height: 3px;
-}
-
-.nosotros-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 0px;
-  height: 500px;
-  overflow: hidden;
-  background-color: transparent;
-}
-
-.nosotros-texto-container {
-  position: relative;
-  height: 225px;
-  width: 425px;
-  margin: 0 2vw;
-  box-sizing: border-box;
-  text-align: center;
-  overflow: hidden;
-  transition: height 0.3s ease, transform 0.3s linear;
-  border-radius: 3vh;
-  cursor: pointer;
-}
-
-.nosotros-texto-container:hover {
-  border-radius: 3vh;
-  height: 275px;
-  transform: scale(1.1);
-}
 
 .gappy1,
 .gappy2 {
   background-color: rgb(130, 130, 130);
   border-radius: 10px;
   width: 3px;
-  overflow: hidden;
   height: 25%;
   transition: all 0.3s ease 0s;
 }
@@ -295,38 +240,4 @@
   transform: rotate(0deg);
   opacity: 1;
   height: 100%;
-}
-
-@media only screen and (max-width: 1300px) and (orientation: portrait) {
-  .nosotros-title-lato {
-    font-size: 4.5vh;
-  }
-
-  .gappy1,
-  .gappy2 {
-    display: none;
-  }
-
-  .nosotros-cards-container {
-    height: 150vh;
-  }
-
-  .nosotros-texto-container {
-    width: 90vw;
-    border: 1px solid #000;
-    border-radius: 10px;
-  }
-
-  .nosotros-card-title {
-    background-color: rgba(0, 255, 255, 0.344);
-    border-radius: 10px;
-    padding: 4vh;
-  }
-
-  .nosotros-texto {
-    width: 70vw;
-    font-size: 2vh;
-    padding: 2vh 4vw;
-    width: 90%;
-  }
 }

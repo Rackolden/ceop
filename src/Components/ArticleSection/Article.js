@@ -1,5 +1,6 @@
 import "./Article.css";
-import React, { useEffect, useRef, useState } from "react";
+import _ from "lodash";
+import React, { useEffect, useRef, useState} from "react";
 import { Link } from "react-router-dom";
 import article1 from "../Images/article/article1.webp";
 import article2 from "../Images/article/article2.webp";
@@ -41,37 +42,35 @@ const Article = () => {
     }));
   };
   const divRef = useRef(null);
-  const getWidth = () => (divRef.current ? divRef.current.clientWidth : 0);
-  const getHeight = () => (divRef.current ? divRef.current.clientHeight : 0);
-  //Funciones para obtener dimensiones exactas (usar solo en caso de emergencia)
-  //const getWidth = () => (divRef.current ? divRef.current.getBoundingClientRect().width : 0);
-  //const getHeight = () => (divRef.current ? divRef.current.getBoundingClientRect().height : 0);
 
   const [divDimensions, setDivDimensions] = useState({
     width: 0,
     height: 0,
   });
-  const getDimensions = () => {
+  const debouncedGetDimensions = _.debounce(() => {
     if (divRef.current) {
-      const newWidth = getWidth();
-      const newHeight = getHeight();
+      const newWidth = divRef.current.offsetWidth;
+      const newHeight = divRef.current.offsetHeight;
       setDivDimensions({
         width: newWidth,
         height: newHeight,
       });
-      console.log(`Width-artc: ${newWidth}\nHeight-artc: ${newHeight}`);
+      console.log(`Width: ${newWidth}, Height: ${newHeight}`);
     }
-  };
+  }, 500);
+
   useEffect(() => {
-    getDimensions();
     const handleResize = () => {
-      getDimensions();
+      debouncedGetDimensions();
     };
+
     window.addEventListener("resize", handleResize);
+
     return () => {
-      window.removeEventListener("resize", handleResize); // Limpia al desmontar
+      window.removeEventListener("resize", handleResize);
+      debouncedGetDimensions.cancel(); // Cleanup
     };
-  });
+  }, [debouncedGetDimensions]);
 
   return (
     <>

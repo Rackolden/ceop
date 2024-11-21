@@ -8,22 +8,20 @@ function Cards() {
   const [hoveredGappy2, setHoveredGappy2] = useState(false);
 
   return (
-    <>
       <motion.div
         id="NosotrosLink"
-        className={`nosotros-section ${hovered ? "hovered" : ""}`}
+        className={`${styles.container} ${
+          hovered ? styles.hovered : ""
+        }`}
       >
-        <motion.div
-          className="nosotros-title-container"
-        >
-          <p className={`nosotros-title-lato ${hovered ? "hovered" : ""}`}>
+        <motion.div className={styles.title}>
             Sobre Nosotros
-          </p>
         </motion.div>
 
-        <div className="nosotros-cards-container">
+        <div className={styles["cards-section"]}>
+
           <motion.div
-            className="nosotros-texto-container uno"
+            className={`${styles.card} ${styles.one}`}
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ amount: 0.3 }}
@@ -37,19 +35,22 @@ function Cards() {
               setHoveredGappy1(false);
             }}
           >
-            <div className="first-content">
+
+            <div className={styles.front}>
               <p className="nosotros-card-title">Misión</p>
               <div className="ver-más-container">
                 <p className="ver-más-texto">Ver Más</p>
               </div>
             </div>
-            <div className="second-content">
+
+            <div className={styles.cover}>
               <p className="nosotros-texto">
                 CEOP Business es una empresa con más de cinco años de
                 experiencia, dedicada a brindar asistencia en la elaboración de
                 tesis para estudiantes de pregrado y postgrado.
               </p>
             </div>
+            
           </motion.div>
 
           <div
@@ -57,7 +58,7 @@ function Cards() {
           ></div>
 
           <motion.div
-            className="nosotros-texto-container dos"
+            className={`${styles.card} ${styles.two}`}
             initial={{ opacity: 0, x: -70 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ amount: 0.3 }}
@@ -73,14 +74,14 @@ function Cards() {
               setHoveredGappy2(false);
             }}
           >
-            <div className="first-content">
+            <div className={styles.front}>
               <p className="nosotros-card-title">Visión</p>
               <div className="ver-más-container">
                 <p className="ver-más-texto">Ver Más</p>
               </div>
             </div>
 
-            <div className="second-content">
+            <div className={styles.cover}>
               <p className="nosotros-texto">
                 Contamos con un equipo de profesionales capacitados en ciencias
                 empresariales, sociales y de la salud. tenemos una sólida
@@ -92,8 +93,9 @@ function Cards() {
           <div
             className={`gappy2 ${hoveredGappy2 ? "hoveredGappy2" : ""}`}
           ></div>
+
           <motion.div
-            className="nosotros-texto-container tres"
+            className={`${styles.card} ${styles.three}`}
             initial={{ opacity: 0, x: -90 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ amount: 0.3 }}
@@ -107,25 +109,25 @@ function Cards() {
               setHoveredGappy2(false);
             }}
           >
-            <div className="first-content">
+            <div className={styles.front}>
               <p className="nosotros-card-title">Compromiso</p>
               <div className="ver-más-container">
                 <p className="ver-más-texto">Ver Más</p>
               </div>
             </div>
 
-            <div className="second-content">
+            <div className={styles.cover}>
               <p className="nosotros-texto">
                 En CEOP Business, entendemos que elaborar una tesis puede ser un
                 desafío. Nos comprometemos a ofrecer un servicio personalizado
-                que ayude a los profesionales a estructurar sus ideas
-                en una tésis de éxito.
+                que ayude a los profesionales a estructurar sus ideas en una
+                tésis de éxito.
               </p>
             </div>
           </motion.div>
+
         </div>
       </motion.div>
-    </>
   );
 }
 
